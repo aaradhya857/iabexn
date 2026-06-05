@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers - IABEX Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+    color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.logo img{
+    height:55px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul a:hover{
+    color:#ed2024;
+}
+
+.nav-btn{
+    background:#ed2024;
+    color:white;
+    border:2px solid #ed2024;
+    padding:12px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* HERO */
+
+.hero{
+    padding:170px 8% 100px;
+    text-align:center;
+    background:#f8f9fb;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#111;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#666;
+    font-size:1.1rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.apply-email{
+    margin-top:25px;
+    font-size:1.2rem;
+    font-weight:700;
+    color:#ed2024;
+}
+
+/* JOBS */
+
+.jobs{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+    color:#111;
+}
+
+.job-card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+    overflow:hidden;
+    border-top:5px solid #ed2024;
+}
+
+.job-header{
+    padding:25px 30px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.job-title{
+    font-size:1.4rem;
+    font-weight:700;
+    color:#111;
+}
+
+.job-openings{
+    color:#ed2024;
+    font-weight:700;
+}
+
+.job-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .5s ease;
+    background:#fafafa;
+}
+
+.job-content-inner{
+    padding:30px;
+}
+
+.job-content ul{
+    padding-left:20px;
+}
+
+.job-content li{
+    margin-bottom:15px;
+    line-height:1.7;
+    color:#555;
+}
+
+.arrow{
+    font-size:1.5rem;
+    color:#ed2024;
+    transition:.3s;
+}
+
+.job-card.active .arrow{
+    transform:rotate(180deg);
+}
+
+/* APPLY */
+
+.apply{
+    background:#f8f9fb;
+    text-align:center;
+    padding:100px 8%;
+}
+
+.apply h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.apply p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.apply-btn{
+    background:#ed2024;
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    padding:16px 35px;
+    border-radius:30px;
+    border:2px solid #ed2024;
+    font-weight:600;
+    transition:.3s;
+}
+
+.apply-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+    .section-title{
+        font-size:2.2rem;
+    }
+
+    .job-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+    <div class="logo">
+        <img src="logo.bmp" alt="IABEX Logo">
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="products.html">Products & Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+
+    <button class="nav-btn">
+        Contact Us
+    </button>
+
+</nav>
+
+<section class="hero">
+
+    <h1>Careers at IABEX</h1>
+
+    <p>
+        Join our team and contribute to innovative electronics,
+        embedded systems and industrial automation solutions.
+    </p>
+
+    <div class="apply-email">
+        Apply at: info@iabex.net
+    </div>
+
+</section>
+
+<section class="jobs">
+
+    <h2 class="section-title">
+        Current Openings
+    </h2>
+
+    <!-- Marketing -->
+
+    <div class="job-card">
+
+        <div class="job-header">
+            <div>
+                <div class="job-title">Marketing Manager</div>
+                <div class="job-openings">Open Positions: 1</div>
+            </div>
+
+            <div class="arrow">▼</div>
+        </div>
+
+        <div class="job-content">
+            <div class="job-content-inner">
+                <ul>
+                    <li>At least 6 months experience in marketing domain of Embedded Systems.</li>
+                    <li>Customer Relationship Management.</li>
+                    <li>Preparing product cost estimates and proposals.</li>
+                    <li>Good understanding of Embedded System based products.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Accounting -->
+
+    <div class="job-card">
+
+        <div class="job-header">
+            <div>
+                <div class="job-title">Accounting Manager</div>
+                <div class="job-openings">Open Positions: 1</div>
+            </div>
+
+            <div class="arrow">▼</div>
+        </div>
+
+        <div class="job-content">
+            <div class="job-content-inner">
+                <ul>
+                    <li>CA / BCOM or equivalent qualification.</li>
+                    <li>At least 6 months experience in accounting or administration.</li>
+                    <li>Hands-on experience maintaining sales and purchase records.</li>
+                    <li>Preparing balance sheets, P&L statements and reports.</li>
+                    <li>Supplier and customer communication on commercial matters.</li>
+                    <li>Embedded System accounting experience preferred.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Embedded -->
+
+    <div class="job-card">
+
+        <div class="job-header">
+            <div>
+                <div class="job-title">Embedded Firmware Developer / Embedded Software Engineer</div>
+                <div class="job-openings">Open Positions: 2</div>
+            </div>
+
+            <div class="arrow">▼</div>
+        </div>
+
+        <div class="job-content">
+            <div class="job-content-inner">
+                <ul>
+                    <li>B.E./B.Tech in Electronics, E&TC or equivalent.</li>
+                    <li>At least 6 months experience in Embedded System software development.</li>
+                    <li>Hands-on experience in Microcontroller programming.</li>
+                    <li>Very good knowledge of C and Assembly.</li>
+                    <li>Good understanding of DMM and DSO.</li>
+                    <li>Must be familiar with Timer, ADC, UART, I2C, SPI, RS485, 7-Segment and LCD interfaces.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Assembler -->
+
+    <div class="job-card">
+
+        <div class="job-header">
+            <div>
+                <div class="job-title">Assembler / Soldering Assembler</div>
+                <div class="job-openings">Open Positions: 2</div>
+            </div>
+
+            <div class="arrow">▼</div>
+        </div>
+
+        <div class="job-content">
+            <div class="job-content-inner">
+                <ul>
+                    <li>Hands-on experience in through-hole and SMD soldering.</li>
+                    <li>Knowledge of schematics, PCB layouts, Gerber files and mechanical drawings.</li>
+                    <li>Good team player.</li>
+                    <li>Good understanding of DMM and DSO.</li>
+                    <li>Ability to work under short deadlines.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="apply">
+
+    <h2>Ready to Join IABEX?</h2>
+
+    <p>
+        Send your resume and application to our recruitment team.
+    </p>
+
+    <a href="mailto:info@iabex.net" class="apply-btn">
+        Apply Now
+    </a>
+
+</section>
+
+<footer>
+    © 2026 IABEX Technologies. All Rights Reserved.
+</footer>
+
+<script>
+
+const jobs = document.querySelectorAll(".job-card");
+
+jobs.forEach(job => {
+
+    const header = job.querySelector(".job-header");
+
+    header.addEventListener("click", () => {
+
+        job.classList.toggle("active");
+
+        const content = job.querySelector(".job-content");
+
+        if(content.style.maxHeight){
+            content.style.maxHeight = null;
+        }else{
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

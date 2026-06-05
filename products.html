@@ -1,0 +1,872 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products & Services - IABEX Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#333;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.logo img{
+    height:55px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav ul a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+nav ul a:hover{
+    color:#ed2024;
+}
+
+.nav-btn{
+    background:#ed2024;
+    color:white;
+    border:2px solid #ed2024;
+    padding:12px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:white;
+    color:black;
+}
+
+.hero{
+    padding:170px 8% 100px;
+    text-align:center;
+    background:#f8f9fb;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+    color:#111;
+}
+
+.section-title::after{
+    content:'';
+    display:block;
+    width:80px;
+    height:4px;
+    background:#ed2024;
+    margin:15px auto;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    border-top:4px solid #ed2024;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:25px;
+}
+
+.product-content h3{
+    color:#111;
+    margin-bottom:12px;
+}
+
+.product-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.view-btn{
+    background:#ed2024;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.view-btn:hover{
+    background:white;
+    color:black;
+    border:2px solid #ed2024;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    overflow:auto;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+    border-radius:20px;
+    padding:40px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:25px;
+    top:20px;
+    font-size:30px;
+    cursor:pointer;
+    color:#ed2024;
+}
+
+.modal-content h2{
+    margin-bottom:20px;
+    color:#111;
+}
+
+.modal-content ul{
+    padding-left:20px;
+}
+
+.modal-content li{
+    margin-bottom:12px;
+    line-height:1.7;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+}
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .section-title{
+        font-size:2.2rem;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+<div class="logo">
+<img src="logo.bmp">
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About Us</a></li>
+<li><a href="products.html">Products & Services</a></li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="index.html#contact">Contact Us</a></li>
+</ul>
+
+<button class="nav-btn">Contact Us</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Products & Services</h1>
+
+<p>
+We provide innovative embedded systems, industrial electronics,
+process automation products, solar LED lighting solutions and
+special purpose machine controllers tailored to industry needs.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Industrial Applications
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="dotmatrix.png">
+<div class="product-content">
+<h3>Dot Matrix Real Time Clock</h3>
+<p>Reliable LED based clock solution for offices, production floors, halls and industrial facilities.</p>
+<button class="view-btn" onclick="openModal('clock')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="smarttouch.jpg">
+<div class="product-content">
+<h3>SmartTouch Button</h3>
+<p>Capacitive touch technology with customizable backlight colors for premium interfaces.</p>
+<button class="view-btn" onclick="openModal('touch')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="liftcontroller.jpeg">
+<div class="product-content">
+<h3>Lift Controller</h3>
+<p>Reliable serial lift control system with advanced LCD and capacitive touch interface.</p>
+<button class="view-btn" onclick="openModal('lift')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="usbserial.jpeg">
+<div class="product-content">
+<h3>USB To Serial Converters</h3>
+<p>USB to RS485, RS422 and RS232 conversion solutions for embedded systems.</p>
+<button class="view-btn" onclick="openModal('usbserial')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="canrs232.jpeg">
+<div class="product-content">
+<h3>CAN To RS232</h3>
+<p>Compact dongle providing instant CAN connectivity through standard RS232 ports.</p>
+<button class="view-btn" onclick="openModal('can')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="GPIO.jpg">
+<div class="product-content">
+<h3>USB To GPIO</h3>
+<p>8-channel USB GPIO module for seamless connection between computers and real-world devices.</p>
+<button class="view-btn" onclick="openModal('gpio')">View Specifications</button>
+</div>
+</div>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2 class="section-title">
+Process Industry
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="timer.jpeg">
+<div class="product-content">
+<h3>Customized Timer / Counter</h3>
+<p>Flexible timer, counter and pulse generator solution for industrial process applications.</p>
+<button class="view-btn" onclick="openModal('timer')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="phmeter.jpg">
+<div class="product-content">
+<h3>pH Meter</h3>
+<p>Accurate pH and temperature measurement system with compensation and calibration features.</p>
+<button class="view-btn" onclick="openModal('ph')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="flowlcd.jpeg">
+<div class="product-content">
+<h3>Flow Totalizer (16x2 LCD)</h3>
+<p>Flow monitoring, batch counting and totalization with interactive LCD display.</p>
+<button class="view-btn" onclick="openModal('flowlcd')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="flow7seg.jpeg">
+<div class="product-content">
+<h3>Flow Totalizer (7-Segment)</h3>
+<p>Industrial flow measurement with pulse and analog transmitter support.</p>
+<button class="view-btn" onclick="openModal('flow7seg')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="okrpmeter.jpg">
+<div class="product-content">
+<h3>ORP Meter</h3>
+<p>Precise oxidation-reduction potential measurement solution for water quality monitoring.</p>
+<button class="view-btn" onclick="openModal('orp')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="tdsmeter.jpg">
+<div class="product-content">
+<h3>TDS Meter</h3>
+<p>Reliable total dissolved solids measurement for industrial process monitoring.</p>
+<button class="view-btn" onclick="openModal('tds')">View Specifications</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Solar LED Lighting
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="streetlight.jpg">
+<div class="product-content">
+<h3>Solar Powered LED Street Lights</h3>
+<p>Environment-friendly solar powered lighting solution for streets and public spaces.</p>
+<button class="view-btn" onclick="openModal('streetlight')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="lantern.png">
+<div class="product-content">
+<h3>Solar Powered Lantern</h3>
+<p>Compact and cost-effective solar powered lighting solution.</p>
+<button class="view-btn" onclick="openModal('lantern')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="chargecontroller.jpeg">
+<div class="product-content">
+<h3>Solar Charge Controller</h3>
+<p>Advanced charge controller supporting multiple battery chemistries and solar configurations.</p>
+<button class="view-btn" onclick="openModal('chargecontroller')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="streetdriver.jpeg">
+<div class="product-content">
+<h3>Solar Charge Controller Cum LED Driver</h3>
+<p>Integrated solar charge controller and street light LED driver solution.</p>
+<button class="view-btn" onclick="openModal('streetdriver')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="slcc12w.jpeg">
+<div class="product-content">
+<h3>SLCC-12W</h3>
+<p>High efficiency solar LED street light controller for 12W applications.</p>
+<button class="view-btn" onclick="openModal('slcc12')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="slcc9w.jpeg">
+<div class="product-content">
+<h3>SLCC-9W</h3>
+<p>Reliable compact solar street light controller for low wattage applications.</p>
+<button class="view-btn" onclick="openModal('slcc9')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="homelighting.jpg">
+<div class="product-content">
+<h3>Home Lighting System</h3>
+<p>Solar powered home lighting solution with USB charging support.</p>
+<button class="view-btn" onclick="openModal('home')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="mppt.jpg">
+<div class="product-content">
+<h3>MPPT Charge Controller 10A</h3>
+<p>Maximum Power Point Tracking controller for improved solar charging efficiency.</p>
+<button class="view-btn" onclick="openModal('mppt')">View Specifications</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+SPM Controllers
+</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="leaktester.jpeg">
+<div class="product-content">
+<h3>Leak Tester</h3>
+<p>Accurate leak detection and pressure monitoring solution for machine components.</p>
+<button class="view-btn" onclick="openModal('leak')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="temperatureprofile.jpeg">
+<div class="product-content">
+<h3>Temperature Profile Manager</h3>
+<p>Compact system for monitoring carbon, silicon and silicate content in liquid metal.</p>
+<button class="view-btn" onclick="openModal('temp')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="acdatalogger.jpeg">
+<div class="product-content">
+<h3>AC Data Logger</h3>
+<p>Continuous AC voltage, current and power monitoring with extensive data logging.</p>
+<button class="view-btn" onclick="openModal('aclog')">View Specifications</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="dcdatalogger.jpeg">
+<div class="product-content">
+<h3>DC Data Logger</h3>
+<p>Continuous DC system monitoring and storage of operational parameters.</p>
+<button class="view-btn" onclick="openModal('dclog')">View Specifications</button>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+<section class="section" style="background:#f8f9fb;text-align:center;">
+
+    <h2 class="section-title">
+        Need a Custom Solution?
+    </h2>
+
+    <p style="max-width:800px;margin:auto;color:#666;line-height:1.8;">
+        IABEX Technologies specializes in custom electronics,
+        embedded systems, industrial automation, renewable energy
+        solutions and special purpose machine development.
+    </p>
+
+    <br><br>
+
+    <a href="mailto:info@iabex.net"
+       style="
+       background:#ed2024;
+       color:white;
+       text-decoration:none;
+       padding:16px 35px;
+       border-radius:30px;
+       display:inline-block;
+       font-weight:600;">
+       Contact Us
+    </a>
+
+</section>
+
+<footer>
+    © 2026 IABEX Technologies. All Rights Reserved.
+</footer>
+
+<script>
+
+const specs = {
+
+clock: `
+<h2>Dot Matrix Real Time Clock</h2>
+<ul>
+<li>Operating Range: 230VAC (+/-10%)</li>
+<li>Real time clock for office and production floor</li>
+<li>12hr / 24hr mode support</li>
+<li>Available in multiple display sizes</li>
+<li>Up / Down / Set keys for configuration</li>
+</ul>
+`,
+
+touch: `
+<h2>SmartTouch Button</h2>
+<ul>
+<li>Operating Range: 24VDC (+/-10%)</li>
+<li>Blue / Orange / Red backlight options</li>
+<li>Capacitive touch technology</li>
+<li>No mechanical wear and tear</li>
+<li>Isolated SSR 1A output</li>
+</ul>
+`,
+
+lift: `
+<h2>Lift Controller</h2>
+<ul>
+<li>Serial type lift controller</li>
+<li>Up to 8 floors down collective</li>
+<li>6 floors full collective</li>
+<li>LCD and capacitive touch HMI</li>
+<li>Opto isolated inputs and outputs</li>
+</ul>
+`,
+
+usbserial: `
+<h2>USB To Serial Converter</h2>
+<ul>
+<li>USB to RS485 Converter</li>
+<li>USB to RS422 Converter</li>
+<li>USB to RS232 Converter</li>
+<li>DB9 Male connector support</li>
+</ul>
+`,
+
+can: `
+<h2>CAN To RS232</h2>
+<ul>
+<li>12V operating input</li>
+<li>Standard DB9 RS232 connection</li>
+<li>Power indication LED</li>
+<li>CAN activity indication</li>
+<li>RS232 activity indication</li>
+</ul>
+`,
+
+gpio: `
+<h2>USB To GPIO</h2>
+<ul>
+<li>8 TTL compatible GPIOs</li>
+<li>6 Analog Inputs</li>
+<li>10-bit Analog Resolution</li>
+<li>ReadAll / WriteAll support</li>
+<li>GPIO configurable as input or output</li>
+</ul>
+`,
+
+timer: `
+<h2>Customized Timer / Counter</h2>
+<ul>
+<li>230VAC Operation</li>
+<li>2 Opto-Isolated Inputs</li>
+<li>2 Relay Outputs</li>
+<li>Timer Range 0000-9999</li>
+<li>Custom application software support</li>
+</ul>
+`,
+
+ph: `
+<h2>pH Meter</h2>
+<ul>
+<li>pH and Temperature Measurement</li>
+<li>PT100 Compensation</li>
+<li>Two Point Calibration</li>
+<li>RS485 Modbus Optional</li>
+<li>Optional 4-20mA Output</li>
+</ul>
+`,
+
+flowlcd: `
+<h2>Flow Totalizer (16x2 LCD)</h2>
+<ul>
+<li>16x2 Interactive LCD</li>
+<li>4-20mA or Pulse Input</li>
+<li>10 Digit Totalization</li>
+<li>Batch Relay Output</li>
+<li>RS485 Modbus Interface</li>
+</ul>
+`,
+
+flow7seg: `
+<h2>Flow Totalizer (7 Segment)</h2>
+<ul>
+<li>7 Segment Display</li>
+<li>LPM/LPS/LPH/m3-Hr Units</li>
+<li>Pulse and Analog Inputs</li>
+<li>Batch Relay Output</li>
+<li>RS485 Modbus Interface</li>
+</ul>
+`,
+
+orp: `
+<h2>ORP Meter</h2>
+<ul>
+<li>Range -1999 to +1999mV</li>
+<li>1mV Resolution</li>
+<li>Two Point Calibration</li>
+<li>Optional RS485 Modbus</li>
+<li>Optional 4-20mA Output</li>
+</ul>
+`,
+
+tds: `
+<h2>TDS Meter</h2>
+<ul>
+<li>Range 0-9990 ppm</li>
+<li>4 Digit Display</li>
+<li>RS485 Modbus Optional</li>
+<li>4-20mA Output Optional</li>
+</ul>
+`,
+
+streetlight: `
+<h2>Solar Powered LED Street Light</h2>
+<ul>
+<li>LED Load up to 18W</li>
+<li>40W/75W Solar Panel Compatible</li>
+<li>Dusk to Dawn Feature</li>
+<li>LiFePo4 and Lead Acid Support</li>
+</ul>
+`,
+
+lantern: `
+<h2>Solar Powered Lantern</h2>
+<ul>
+<li>3W LED</li>
+<li>12W Solar Panel Compatible</li>
+<li>Two Step Dimming</li>
+<li>Battery Protection</li>
+</ul>
+`,
+
+chargecontroller: `
+<h2>Solar Charge Controller</h2>
+<ul>
+<li>12V / 24V System</li>
+<li>15A Controller</li>
+<li>Three Stage Charging</li>
+<li>Temperature Compensation</li>
+<li>Dusk to Dawn Feature</li>
+</ul>
+`,
+
+streetdriver: `
+<h2>Solar Charge Controller Cum LED Driver</h2>
+<ul>
+<li>LED Load up to 30W</li>
+<li>150W Solar Panel Compatible</li>
+<li>Dusk to Dawn Feature</li>
+<li>Battery Protection</li>
+</ul>
+`,
+
+slcc12: `
+<h2>SLCC-12W</h2>
+<ul>
+<li>LED Load up to 14W</li>
+<li>75W Solar Panel Compatible</li>
+<li>50% Dimming after 6 Hours</li>
+<li>Dusk to Dawn Operation</li>
+</ul>
+`,
+
+slcc9: `
+<h2>SLCC-9W</h2>
+<ul>
+<li>LED Load up to 9W</li>
+<li>40W Solar Panel Compatible</li>
+<li>Dusk to Dawn Feature</li>
+<li>Battery Protection</li>
+</ul>
+`,
+
+home: `
+<h2>Home Lighting System</h2>
+<ul>
+<li>12V Battery System</li>
+<li>40W Solar Panel Compatible</li>
+<li>USB Charging Support</li>
+<li>Dual Load Operation</li>
+</ul>
+`,
+
+mppt: `
+<h2>MPPT Charge Controller 10A</h2>
+<ul>
+<li>12VDC Operation</li>
+<li>10A Output Current</li>
+<li>100W Maximum Input Power</li>
+</ul>
+`,
+leak: `
+<h2>Leak Tester</h2>
+<ul>
+<li>Accurate leak detection using air pressure measurement.</li>
+<li>230VAC Operation.</li>
+<li>Reliable pressure monitoring.</li>
+<li>RS485 Communication Support.</li>
+<li>PC Monitoring and Logging Facility.</li>
+</ul>
+`,
+
+temp: `
+<h2>Temperature Profile Manager</h2>
+<ul>
+<li>Measures carbon, silicon and silicate content.</li>
+<li>K-Type Thermocouple Support.</li>
+<li>Temperature compensation algorithms.</li>
+<li>Multiple program selection.</li>
+<li>View previous 20 results.</li>
+</ul>
+`,
+
+aclog: `
+<h2>AC Data Logger</h2>
+<ul>
+<li>230VAC Operation.</li>
+<li>Voltage, Current and Power Monitoring.</li>
+<li>Up to 3 Lakh Records Storage.</li>
+<li>CSV Export through Pen Drive.</li>
+<li>Two LDR Sensors for Light Monitoring.</li>
+<li>Configurable Logging Interval.</li>
+</ul>
+`,
+
+dclog: `
+<h2>DC Data Logger</h2>
+<ul>
+<li>12VDC Operation.</li>
+<li>Voltage, Current and Power Monitoring.</li>
+<li>Up to 3 Lakh Records Storage.</li>
+<li>CSV Export through Pen Drive.</li>
+<li>Two LDR Sensors for Light Monitoring.</li>
+<li>Configurable Logging Interval.</li>
+</ul>
+`
+
+};
+
+function openModal(product){
+
+    document.getElementById("modalBody").innerHTML =
+    specs[product];
+
+    document.getElementById("productModal").style.display =
+    "block";
+}
+
+function closeModal(){
+
+    document.getElementById("productModal").style.display =
+    "none";
+}
+
+window.onclick = function(event){
+
+    const modal =
+    document.getElementById("productModal");
+
+    if(event.target == modal){
+
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
