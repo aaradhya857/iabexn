@@ -109,8 +109,8 @@ nav a:hover{
 
     background:
     linear-gradient(
-        rgba(255,255,255,.35),
-        rgba(255,255,255,.35)
+        rgba(255,255,255,.65),
+        rgba(255,255,255,.65)
     ),
     url("safedur.png");
 
@@ -296,6 +296,7 @@ section{
     margin-bottom:60px;
     color:#111;
 }
+
 .about-title{
     color:#ed2024;
 }
@@ -310,7 +311,7 @@ section{
 }
 
 .about-content{
-    text-align:center;
+    text-align:justify;
     line-height:2;
     color:#555;
     font-size:1.15rem;
@@ -374,6 +375,20 @@ section{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:25px;
+}
+.industries-title{
+    color:#111;
+}
+
+.industries-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.industries .why-card{
+    min-width:auto;
+    padding:25px 15px;
 }
 
 .why-card{
@@ -496,7 +511,7 @@ footer{
         </div>
 
         <div class="goto-line">
-            Industries we serve
+            The go-to destination for
         </div>
 
         <div class="industry-rotator">
@@ -507,13 +522,11 @@ footer{
 
         </div>
 
-   
+       
 
     </div>
 
-   
 
-    </div>
 
 </section>
 
@@ -572,7 +585,37 @@ footer{
     </div>
 
 </section>
+<section class="industries hidden">
 
+    <h2 class="section-title industries-title">
+        Industries We Serve
+    </h2>
+
+    <div class="industries-grid">
+
+        <div class="why-card">
+            <h3>Process Industry</h3>
+        </div>
+
+        <div class="why-card">
+            <h3>Lighting Industry</h3>
+        </div>
+
+        <div class="why-card">
+            <h3>Renewable Energy</h3>
+        </div>
+
+        <div class="why-card">
+            <h3>Industrial Applications</h3>
+        </div>
+
+        <div class="why-card">
+            <h3>Special Purpose Machines</h3>
+        </div>
+
+    </div>
+
+</section>
 <section class="why hidden">
 
     <h2 class="section-title">
