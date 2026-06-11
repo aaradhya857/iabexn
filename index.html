@@ -74,6 +74,7 @@ nav a:hover{
     cursor:pointer;
     font-weight:600;
 }
+
 /* RED BUTTONS */
 
 .primary-btn,
@@ -99,10 +100,12 @@ nav a:hover{
     color:#ffffff;
     border-color:#111;
 }
+
 /* HERO */
 
 .hero{
-    min-height:600px;
+
+    min-height:760px;
 
     background:
     linear-gradient(
@@ -118,17 +121,19 @@ nav a:hover{
 
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:120px 40px;
+    justify-content:space-between;
+
+    padding:120px 8%;
 }
 
 .hero-content{
-    width:900px;
+    width:58%;
+    z-index:2;
+    position:relative;
 }
 
 .hero h1{
-    font-size:5rem;
+    font-size:4.3rem;
     color:#111;
     margin-bottom:10px;
     font-weight:800;
@@ -139,21 +144,30 @@ nav a:hover{
     color:#ed2024;
     font-size:1.4rem;
     font-weight:600;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-.hero p{
-    font-size:1.15rem;
+.goto-line{
+    font-size:1.8rem;
     font-weight:700;
-    line-height:1.4;
     color:#111;
-    text-shadow:0 1px 3px rgba(255,255,255,.6);
+}
+
+.industry-rotator{
+    margin-top:10px;
+    height:75px;
+}
+
+.industry-rotator span{
+    font-size:2.2rem;
+    color:#ed2024;
+    font-weight:800;
+    white-space:nowrap;
 }
 
 .hero-buttons{
     margin-top:35px;
     display:flex;
-    justify-content:center;
     gap:15px;
 }
 
@@ -175,6 +189,99 @@ nav a:hover{
     border-radius:30px;
     cursor:pointer;
     font-weight:600;
+}
+
+.hero-cards{
+    width:38%;
+    height:600px;
+    position:relative;
+}
+
+.floating-card{
+
+    position:absolute;
+
+    width:340px;
+
+    min-height:120px;
+
+    padding:42px 30px;
+
+    background:white;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:0 8px 35px rgba(0,0,0,.10);
+
+    transition:.4s;
+
+    animation:float 6s ease-in-out infinite;
+}
+
+.floating-card:hover{
+
+    z-index:999;
+
+    transform:
+    translateY(-12px)
+    scale(1.08);
+
+    box-shadow:
+    0 22px 60px
+    rgba(237,32,36,.20);
+}
+
+.floating-card h3{
+    color:#ed2024;
+    font-size:1.15rem;
+    line-height:1.4;
+}
+
+.card1{
+    top:10px;
+    left:60px;
+}
+
+.card1{
+    top:0;
+    left:20px;
+}
+
+.card2{
+    top:110px;
+    right:0;
+    animation-delay:1s;
+}
+
+.card3{
+    top:230px;
+    left:0;
+    animation-delay:2s;
+}
+
+.card4{
+    top:350px;
+    right:40px;
+    animation-delay:3s;
+}
+
+.card5{
+    top:470px;
+    left:60px;
+    animation-delay:4s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
 }
 
 /* GENERAL */
@@ -212,34 +319,49 @@ section{
     margin-bottom:20px;
 }
 
-/* INDUSTRIES */
+/* SLIDESHOW */
 
-.industry-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:25px;
+.showcase{
+    background:#fff;
 }
 
+.slideshow{
 
+    width:1100px;
 
-.card{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
-    transition:.3s;
+    height:550px;
+
+    margin:auto;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 15px 45px
+    rgba(0,0,0,.12);
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 10px 35px rgba(237,32,36,.15);
+.slide{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
 }
 
-.card h3{
-    color:#ed2024;
+.slide.active{
+    opacity:1;
 }
-
 /* WHY CHOOSE */
 
 .why{
@@ -264,8 +386,6 @@ section{
     color:#ed2024;
     margin-bottom:15px;
 }
-
-/* CONTACT */
 
 /* CONTACT */
 
@@ -316,8 +436,6 @@ section{
     box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
 
-
-
 /* FOOTER */
 
 footer{
@@ -340,10 +458,9 @@ footer{
     transform:translateY(0);
 }
 
-
-
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -376,22 +493,17 @@ footer{
             It's all about electronics
         </div>
 
-        <p>
-            As the name IABEX suggests, we do everything in electronics.
-            We not only develop innovative embedded system based products
-            but also provide customized one stop solution to our customers.
-        </p>
+        <div class="goto-line">
+            The go-to destination for
+        </div>
 
-        <p>
-            We provide electronics solution to different businesses that includes
-            Process Industry, Lighting Industry, Renewable Energy,
-            Industrial Application and Special Purpose Machines (SPM).
-        </p>
+        <div class="industry-rotator">
 
-        <p>
-            If you are looking for any type of electronics system development,
-            any embedded system based solution, we guarantee to make it through.
-        </p>
+            <span id="industryText">
+                Process Industry
+            </span>
+
+        </div>
 
         <div class="hero-buttons">
 
@@ -403,6 +515,30 @@ footer{
                 Contact Us
             </button>
 
+        </div>
+
+    </div>
+
+    <div class="hero-cards">
+
+        <div class="floating-card card1">
+            <h3>Process Industry</h3>
+        </div>
+
+        <div class="floating-card card2">
+            <h3>Lighting Industry</h3>
+        </div>
+
+        <div class="floating-card card3">
+            <h3>Renewable Energy</h3>
+        </div>
+
+        <div class="floating-card card4">
+            <h3>Industrial Applications</h3>
+        </div>
+
+        <div class="floating-card card5">
+            <h3>Special Purpose Machines</h3>
         </div>
 
     </div>
@@ -420,9 +556,19 @@ footer{
         <div class="about-content">
 
             <p>
-                At IABEX Technologies, we bridge the gap between complex engineering concepts and market-ready realities. As a premier electronics development partner, we specialize in designing and engineering innovative embedded systems, custom electronic products, and tailored engineering solutions that empower industries to operate smarter, faster, and more efficiently.
+                At IABEX Technologies, we bridge the gap between
+                complex engineering concepts and market-ready realities.
+                As a premier electronics development partner,
+                we specialize in designing and engineering innovative
+                embedded systems, custom electronic products,
+                and tailored engineering solutions that empower industries
+                to operate smarter, faster, and more efficiently.
 
-We don’t just build hardware; we engineer reliability. By combining cutting-edge technology with practical, cost-effective design practices, we ensure that your customized electronics solutions are robust, scalable, and optimized for long-term performance.
+                We don’t just build hardware; we engineer reliability.
+                By combining cutting-edge technology with practical,
+                cost-effective design practices, we ensure that your
+                customized electronics solutions are robust,
+                scalable, and optimized for long-term performance.
             </p>
 
         </div>
@@ -431,33 +577,25 @@ We don’t just build hardware; we engineer reliability. By combining cutting-ed
 
 </section>
 
-<section id="industries" class="hidden">
+<section class="showcase hidden">
 
     <h2 class="section-title">
-        Industries We Serve
+        Industries In Action
     </h2>
 
-    <div class="industry-grid">
+    <div class="slideshow">
 
-        <div class="card">
-            <h3>Process Industry</h3>
-        </div>
+        <img src="slide1.jpg"
+             class="slide active"
+             alt="Industry 1">
 
-        <div class="card">
-            <h3>Lighting Industry</h3>
-        </div>
+        <img src="slide2.jpg"
+             class="slide"
+             alt="Industry 2">
 
-        <div class="card">
-            <h3>Renewable Energy</h3>
-        </div>
-
-        <div class="card">
-            <h3>Industrial Applications</h3>
-        </div>
-
-        <div class="card">
-            <h3>Special Purpose Machines</h3>
-        </div>
+        <img src="slide3.jpg"
+             class="slide"
+             alt="Industry 3">
 
     </div>
 
@@ -473,28 +611,39 @@ We don’t just build hardware; we engineer reliability. By combining cutting-ed
 
         <div class="why-card">
             <h3>Innovative Solutions</h3>
-            <p>Creative electronics solutions tailored to customer requirements.</p>
+            <p>
+                Creative electronics solutions tailored
+                to customer requirements.
+            </p>
         </div>
 
         <div class="why-card">
             <h3>Industry Expertise</h3>
-            <p>Extensive experience across multiple engineering domains.</p>
+            <p>
+                Extensive experience across multiple
+                engineering domains.
+            </p>
         </div>
 
         <div class="why-card">
             <h3>Customized Development</h3>
-            <p>End-to-end product development and embedded system design.</p>
+            <p>
+                End-to-end product development and
+                embedded system design.
+            </p>
         </div>
 
         <div class="why-card">
             <h3>Reliable Support</h3>
-            <p>Dedicated assistance throughout the project lifecycle.</p>
+            <p>
+                Dedicated assistance throughout
+                the project lifecycle.
+            </p>
         </div>
 
     </div>
 
 </section>
-
 <section class="contact hidden" id="contact">
 
     <h2 class="section-title">
@@ -508,35 +657,33 @@ We don’t just build hardware; we engineer reliability. By combining cutting-ed
             <h3>IABEX Technologies</h3>
 
             <p>
-                S no. 131/2A/24-7
-                Geetanjali Society Behind Church
-                Warje Pune Maharashtra-411058
+                S no. 131/2A/24-7 Geetanjali Society
+                Behind Church Warje,
+                Pune, Maharashtra - 411058
             </p>
+
+            <h4>Phone</h4>
 
             <p>
-                <strong>Tel:</strong> +91 7666690113
+                +91 7666690113
             </p>
+
+            <h4>Email</h4>
 
             <p>
-                <strong>Mail:</strong> info@iabex.net
+                info@iabex.net
             </p>
-
             <div class="hours">
 
-                <h4>Business Hours</h4>
+    <h4>Business Hours</h4>
 
-                <p>Weekdays : 9:30 AM to 6:30 PM</p>
-                <p>Sundays : Holiday</p>
-                <p>Festivals : Holiday</p>
+    <p>Weekdays : 9:30 AM to 6:30 PM</p>
 
-            </div>
+    <p>Sundays : Holiday</p>
 
-            <a href="https://maps.google.com/?q=IABEX+Technologies+Warje+Pune"
-               target="_blank"
-               class="primary-btn"
-               style="text-decoration:none;display:inline-block;margin-top:20px;">
-                Open in Google Maps
-            </a>
+    <p>Festivals : Holiday</p>
+
+</div>
 
         </div>
 
@@ -544,7 +691,6 @@ We don’t just build hardware; we engineer reliability. By combining cutting-ed
 
             <iframe
                 src="https://maps.google.com/maps?q=IABEX%20Technologies%20Warje%20Pune&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                allowfullscreen=""
                 loading="lazy">
             </iframe>
 
@@ -555,29 +701,104 @@ We don’t just build hardware; we engineer reliability. By combining cutting-ed
 </section>
 
 <footer>
-    © 2026 IABEX Technologies. All Rights Reserved.
+
+    © 2026 IABEX Technologies.
+    All Rights Reserved.
+
 </footer>
 
 <script>
 
-const observer = new IntersectionObserver((entries)=>{
+/* INDUSTRY TEXT ROTATOR */
 
-    entries.forEach(entry=>{
+const industries = [
+
+    "Process Industry",
+
+    "Lighting Industry",
+
+    "Renewable Energy",
+
+    "Industrial Applications",
+
+    "Special Purpose Machines"
+
+];
+
+let industryIndex = 0;
+
+setInterval(() => {
+
+    industryIndex++;
+
+    if(industryIndex >= industries.length){
+
+        industryIndex = 0;
+
+    }
+
+    document.getElementById("industryText").textContent =
+    industries[industryIndex];
+
+},2500);
+
+/* SLIDESHOW */
+
+const slides =
+document.querySelectorAll(".slide");
+
+let slideIndex = 0;
+
+setInterval(() => {
+
+    slides[slideIndex]
+    .classList.remove("active");
+
+    slideIndex++;
+
+    if(slideIndex >= slides.length){
+
+        slideIndex = 0;
+
+    }
+
+    slides[slideIndex]
+    .classList.add("active");
+
+},4000);
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach((entry)=>{
 
         if(entry.isIntersecting){
+
             entry.target.classList.add("show");
+
         }
 
     });
 
-},{threshold:0.15});
+},
+{
+    threshold:0.15
+}
 
-document.querySelectorAll(".hidden").forEach(el=>{
+);
+
+document
+.querySelectorAll(".hidden")
+.forEach((el)=>{
+
     observer.observe(el);
+
 });
 
 </script>
 
 </body>
 </html>
-
