@@ -3,448 +3,1149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Careers - IABEX Technologies</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Careers | IABEX Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
+/* ──────────────────────────
+   RESET
+────────────────────────── */
+
+*,*::before,*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-body{
-    background:#ffffff;
-    color:#333;
+:root{
+
+    --red:#ed2024;
+    --red-light:rgba(237,32,36,.08);
+
+    --bg:#ffffff;
+    --bg2:#fafafa;
+
+    --line:rgba(0,0,0,.08);
+    --line-strong:rgba(0,0,0,.14);
+
+    --text:#111111;
+    --muted:#666666;
+    --white:#ffffff;
 }
 
-/* NAVBAR */
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'Space Grotesk',sans-serif;
+
+    overflow-x:hidden;
+}
+
+/* ──────────────────────────
+   NAVBAR
+────────────────────────── */
 
 nav{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    background:white;
+
+    height:70px;
+
+    padding:0 60px;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
-    padding:18px 8%;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid var(--line);
+
     z-index:1000;
 }
 
-.logo img{
-    height:55px;
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+}
+
+.logo-mark{
+
+    width:36px;
+    height:36px;
+
+    border:2px solid var(--red);
+
+    display:grid;
+    place-items:center;
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.7rem;
+
+    color:var(--red);
+
+    position:relative;
+}
+
+.logo-mark::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:4px;
+    left:4px;
+
+    width:6px;
+    height:6px;
+
+    background:var(--red);
+}
+
+.logo-name{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    color:var(--text);
+
+    text-transform:uppercase;
+}
+
+.logo-name span{
+    color:var(--red);
 }
 
 nav ul{
+
     display:flex;
+
     list-style:none;
-    gap:35px;
+
+    gap:36px;
 }
 
 nav ul a{
+
     text-decoration:none;
-    color:#333;
+
+    color:var(--muted);
+
+    font-size:.82rem;
+
     font-weight:500;
-    transition:.3s;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    transition:.2s;
 }
 
 nav ul a:hover{
-    color:#ed2024;
+
+    color:var(--red);
 }
 
-.nav-btn{
-    background:#ed2024;
+.nav-cta{
+
+    background:var(--red);
+
+    border:1px solid var(--red);
+
     color:white;
-    border:2px solid #ed2024;
-    padding:12px 24px;
-    border-radius:30px;
-    cursor:pointer;
+
+    padding:8px 22px;
+
+    font-size:.78rem;
+
     font-weight:600;
-    transition:.3s;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.25s;
 }
 
-.nav-btn:hover{
-    background:white;
-    color:black;
+.nav-cta:hover{
+
+    background:transparent;
+
+    color:var(--red);
 }
 
-/* HERO */
+/* ──────────────────────────
+   HERO
+────────────────────────── */
 
 .hero{
-    padding:170px 8% 100px;
-    text-align:center;
-    background:#f8f9fb;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:120px 60px 80px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+
+    background-size:60px 60px;
+}
+
+.hero-slash{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:42%;
+    height:100%;
+
+    background:var(--red);
+
+    clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
+}
+
+.hero-eyebrow{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.72rem;
+
+    color:var(--muted);
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-eyebrow::before{
+
+    content:'';
+
+    width:40px;
+
+    height:1px;
+
+    background:var(--red);
 }
 
 .hero h1{
-    font-size:4rem;
-    color:#111;
-    margin-bottom:15px;
+
+    font-size:clamp(3.5rem,6vw,5.8rem);
+
+    font-weight:700;
+
+    line-height:1.05;
+
+    max-width:700px;
+
+    margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.hero p{
-    color:#666;
-    font-size:1.1rem;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
+.hero h1 em{
+
+    color:var(--red);
+
+    font-style:normal;
+}
+
+.hero-sub{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.85rem;
+
+    color:var(--muted);
+
+    letter-spacing:.15em;
+
+    margin-bottom:40px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-description{
+
+    max-width:760px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+    position:relative;
+
+    z-index:2;
 }
 
 .apply-email{
-    margin-top:25px;
-    font-size:1.2rem;
+
+    margin-top:40px;
+
+    color:var(--red);
+
+    font-family:'Space Mono',monospace;
+
+    font-size:1rem;
+
+    letter-spacing:.1em;
+
     font-weight:700;
-    color:#ed2024;
+
+    position:relative;
+
+    z-index:2;
+}
+/* ──────────────────────────
+   SECTION COMMON
+────────────────────────── */
+
+section{
+    padding:100px 60px;
 }
 
-/* JOBS */
+.label{
 
-.jobs{
-    padding:100px 8%;
+    font-family:'Space Mono',monospace;
+
+    font-size:.68rem;
+
+    color:var(--red);
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
 }
 
-.section-title{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:60px;
-    color:#111;
+.label::before{
+
+    content:'';
+
+    width:30px;
+
+    height:2px;
+
+    background:var(--red);
+}
+
+.section-heading{
+
+    font-size:clamp(2rem,3.5vw,3rem);
+
+    font-weight:700;
+
+    color:var(--text);
+
+    line-height:1.1;
+
+    letter-spacing:-.01em;
+}
+
+/* ──────────────────────────
+   OPENINGS
+────────────────────────── */
+
+.openings{
+
+    background:var(--bg);
+}
+
+.openings-inner{
+
+    max-width:1140px;
+
+    margin:0 auto;
+}
+
+.jobs-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1px;
+
+    background:var(--line-strong);
+
+    border:1px solid var(--line-strong);
+
+    margin-top:50px;
 }
 
 .job-card{
+
     background:white;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    margin-bottom:25px;
-    overflow:hidden;
-    border-top:5px solid #ed2024;
-}
 
-.job-header{
-    padding:25px 30px;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+    padding:40px;
 
-.job-title{
-    font-size:1.4rem;
-    font-weight:700;
-    color:#111;
-}
+    position:relative;
 
-.job-openings{
-    color:#ed2024;
-    font-weight:700;
-}
-
-.job-content{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .5s ease;
-    background:#fafafa;
-}
-
-.job-content-inner{
-    padding:30px;
-}
-
-.job-content ul{
-    padding-left:20px;
-}
-
-.job-content li{
-    margin-bottom:15px;
-    line-height:1.7;
-    color:#555;
-}
-
-.arrow{
-    font-size:1.5rem;
-    color:#ed2024;
     transition:.3s;
 }
 
-.job-card.active .arrow{
-    transform:rotate(180deg);
+.job-card:hover{
+
+    background:var(--red-light);
 }
 
-/* APPLY */
+.job-number{
 
-.apply{
-    background:#f8f9fb;
-    text-align:center;
-    padding:100px 8%;
-}
+    font-family:'Space Mono',monospace;
 
-.apply h2{
-    font-size:2.8rem;
+    font-size:.8rem;
+
+    color:var(--red);
+
+    letter-spacing:.15em;
+
     margin-bottom:20px;
 }
 
+.job-title{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    color:var(--text);
+}
+
+.job-openings{
+
+    color:var(--red);
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+.job-card ul{
+
+    padding-left:18px;
+}
+
+.job-card li{
+
+    margin-bottom:12px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+/* ──────────────────────────
+   WHY JOIN
+────────────────────────── */
+
+.why-join{
+
+    background:var(--bg2);
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+}
+
+.why-inner{
+
+    max-width:1140px;
+
+    margin:0 auto;
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1px;
+
+    margin-top:50px;
+
+    background:var(--line-strong);
+
+    border:1px solid var(--line-strong);
+}
+
+.why-card{
+
+    background:white;
+
+    padding:35px;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.why-card:hover{
+
+    background:var(--red-light);
+}
+
+.why-card h3{
+
+    font-size:1rem;
+
+    margin-bottom:12px;
+
+    color:var(--text);
+}
+
+.why-card p{
+
+    font-size:.9rem;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+/* ──────────────────────────
+   APPLY SECTION
+────────────────────────── */
+
+.apply{
+
+    background:var(--red);
+}
+
+.apply-inner{
+
+    max-width:1140px;
+
+    margin:0 auto;
+}
+
+.apply .label{
+
+    color:rgba(255,255,255,.8);
+}
+
+.apply .label::before{
+
+    background:rgba(255,255,255,.8);
+}
+
+.apply h2{
+
+    color:white;
+
+    font-size:clamp(2.5rem,4vw,4rem);
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
 .apply p{
-    color:#666;
-    margin-bottom:30px;
+
+    color:rgba(255,255,255,.8);
+
+    max-width:700px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
 }
 
 .apply-btn{
-    background:#ed2024;
-    color:white;
-    text-decoration:none;
+
     display:inline-block;
-    padding:16px 35px;
-    border-radius:30px;
-    border:2px solid #ed2024;
+
+    padding:14px 30px;
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
     font-weight:600;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
     transition:.3s;
 }
 
 .apply-btn:hover{
+
     background:white;
-    color:black;
+
+    color:var(--red);
+}
+/* PCB TRACE */
+
+.trace-container{
+    position:fixed;
+    right:22px;
+    top:0;
+    width:2px;
+    height:100vh;
+    z-index:999;
+    pointer-events:none;
 }
 
-/* FOOTER */
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px;
+.trace-bg{
+    position:absolute;
+    inset:0;
+    background:var(--line-strong);
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-
-    nav ul{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:2.7rem;
-    }
-
-    .section-title{
-        font-size:2.2rem;
-    }
-
-    .job-header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-    }
+.trace-fill{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background:var(--red);
+    box-shadow:0 0 6px rgba(237,32,36,.4);
+    transition:height .1s linear;
 }
 
+.trace-dot{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 10px rgba(237,32,36,.6);
+}
+.pcb-corner{
+    position:absolute;
+    top:60px;
+    right:40px;
+    width:320px;
+    height:320px;
+    opacity:.2;
+    pointer-events:none;
+    z-index:1;
+}
+
+.pcb-corner svg{
+    width:100%;
+    height:100%;
+}
 </style>
 </head>
+
 <body>
+    <!-- PCB Trace scroll indicator -->
+<div class="trace-container">
+    <div class="trace-bg"></div>
+    <div class="trace-fill" id="traceFill"></div>
+    <div class="trace-dot" id="traceDot"></div>
+</div>
 
 <nav>
 
-    <div class="logo">
-        <img src="logo.bmp" alt="IABEX Logo">
-    </div>
+<a href="index.html" class="logo">
+    <div class="logo-mark">IX</div>
+    <span class="logo-name">IAB<span>EX</span></span>
+</a>
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About Us</a></li>
-        <li><a href="products.html">Products & Services</a></li>
-        <li><a href="careers.html">Careers</a></li>
-        <li><a href="index.html#contact">Contact Us</a></li>
-    </ul>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+</ul>
 
-    <button class="nav-btn">
-        Contact Us
-    </button>
+<a href="mailto:info@iabex.net" class="nav-cta">
+    Get in Touch
+</a>
 
 </nav>
 
 <section class="hero">
 
-    <h1>Careers at IABEX</h1>
+    <div class="hero-slash"></div>
+    <div class="pcb-corner" aria-hidden="true">
 
-    <p>
+<svg viewBox="0 0 340 340" fill="none"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect x="10" y="10" width="320" height="320"
+stroke="white" stroke-width="1"/>
+
+<rect x="30" y="30" width="280" height="280"
+stroke="white"
+stroke-width="0.5"
+stroke-dasharray="4 4"/>
+
+<line x1="10" y1="80" x2="80" y2="80"
+stroke="white" stroke-width="1.5"/>
+
+<circle cx="80" cy="80" r="5" fill="white"/>
+
+<line x1="80" y1="80" x2="80" y2="140"
+stroke="white" stroke-width="1.5"/>
+
+<circle cx="80" cy="140" r="4"
+fill="none"
+stroke="white"
+stroke-width="1.5"/>
+
+<line x1="80" y1="140" x2="160" y2="140"
+stroke="white" stroke-width="1.5"/>
+
+<circle cx="160" cy="140" r="5" fill="white"/>
+
+<line x1="160" y1="140" x2="160" y2="200"
+stroke="white" stroke-width="1.5"/>
+
+<line x1="160" y1="200" x2="280" y2="200"
+stroke="white" stroke-width="1.5"/>
+
+<circle cx="280" cy="200" r="5" fill="white"/>
+
+<rect x="100" y="40" width="60" height="40"
+stroke="white"
+stroke-width="1"/>
+
+<rect x="200" y="100" width="50" height="50"
+stroke="white"
+stroke-width="1"/>
+
+</svg>
+
+</div>
+
+    <div class="hero-eyebrow">
+        Pune, India — Careers
+    </div>
+
+    <h1>
+        Join the future<br>
+        of <em>ElectroniX.</em>
+    </h1>
+
+    <p class="hero-sub">
+        ENGINEERS • INNOVATORS • PROBLEM SOLVERS
+    </p>
+
+    <p class="hero-description">
+
         Join our team and contribute to innovative electronics,
         embedded systems and industrial automation solutions.
+        We are always looking for passionate professionals who
+        enjoy solving real-world engineering challenges and
+        creating impactful technology solutions.
+
     </p>
 
     <div class="apply-email">
-        Apply at: info@iabex.net
+        APPLY AT : INFO@IABEX.NET
     </div>
 
 </section>
 
-<section class="jobs">
+<section class="openings">
 
-    <h2 class="section-title">
-        Current Openings
-    </h2>
+<div class="openings-inner">
 
-    <!-- Marketing -->
+<div class="label">
+Current Openings
+</div>
 
-    <div class="job-card">
+<h2 class="section-heading">
+Explore opportunities at IABEX.
+</h2>
 
-        <div class="job-header">
-            <div>
-                <div class="job-title">Marketing Manager</div>
-                <div class="job-openings">Open Positions: 1</div>
-            </div>
+<div class="jobs-grid">
 
-            <div class="arrow">▼</div>
-        </div>
+<div class="job-card">
 
-        <div class="job-content">
-            <div class="job-content-inner">
-                <ul>
-                    <li>At least 6 months experience in marketing domain of Embedded Systems.</li>
-                    <li>Customer Relationship Management.</li>
-                    <li>Preparing product cost estimates and proposals.</li>
-                    <li>Good understanding of Embedded System based products.</li>
-                </ul>
-            </div>
-        </div>
+<div class="job-number">
+POSITION 01
+</div>
 
-    </div>
+<div class="job-title">
+Marketing Manager
+</div>
 
-    <!-- Accounting -->
+<div class="job-openings">
+Open Positions : 1
+</div>
 
-    <div class="job-card">
+<ul>
+<li>At least 6 months experience in marketing domain of Embedded Systems.</li>
+<li>Customer Relationship Management.</li>
+<li>Preparing product cost estimates and proposals.</li>
+<li>Good understanding of Embedded System based products.</li>
+</ul>
 
-        <div class="job-header">
-            <div>
-                <div class="job-title">Accounting Manager</div>
-                <div class="job-openings">Open Positions: 1</div>
-            </div>
+</div>
 
-            <div class="arrow">▼</div>
-        </div>
+<div class="job-card">
 
-        <div class="job-content">
-            <div class="job-content-inner">
-                <ul>
-                    <li>CA / BCOM or equivalent qualification.</li>
-                    <li>At least 6 months experience in accounting or administration.</li>
-                    <li>Hands-on experience maintaining sales and purchase records.</li>
-                    <li>Preparing balance sheets, P&L statements and reports.</li>
-                    <li>Supplier and customer communication on commercial matters.</li>
-                    <li>Embedded System accounting experience preferred.</li>
-                </ul>
-            </div>
-        </div>
+<div class="job-number">
+POSITION 02
+</div>
 
-    </div>
+<div class="job-title">
+Accounting Manager
+</div>
 
-    <!-- Embedded -->
+<div class="job-openings">
+Open Positions : 1
+</div>
 
-    <div class="job-card">
+<ul>
+<li>CA / BCOM or equivalent qualification.</li>
+<li>At least 6 months experience in accounting or administration.</li>
+<li>Maintaining sales and purchase records.</li>
+<li>Preparing balance sheets and P&L reports.</li>
+<li>Supplier and customer communication.</li>
+</ul>
 
-        <div class="job-header">
-            <div>
-                <div class="job-title">Embedded Firmware Developer / Embedded Software Engineer</div>
-                <div class="job-openings">Open Positions: 2</div>
-            </div>
+</div>
+<div class="job-card">
 
-            <div class="arrow">▼</div>
-        </div>
+<div class="job-number">
+POSITION 03
+</div>
 
-        <div class="job-content">
-            <div class="job-content-inner">
-                <ul>
-                    <li>B.E./B.Tech in Electronics, E&TC or equivalent.</li>
-                    <li>At least 6 months experience in Embedded System software development.</li>
-                    <li>Hands-on experience in Microcontroller programming.</li>
-                    <li>Very good knowledge of C and Assembly.</li>
-                    <li>Good understanding of DMM and DSO.</li>
-                    <li>Must be familiar with Timer, ADC, UART, I2C, SPI, RS485, 7-Segment and LCD interfaces.</li>
-                </ul>
-            </div>
-        </div>
+<div class="job-title">
+Embedded Firmware Developer /
+Embedded Software Engineer
+</div>
 
-    </div>
+<div class="job-openings">
+Open Positions : 2
+</div>
 
-    <!-- Assembler -->
+<ul>
+<li>B.E./B.Tech in Electronics, E&TC or equivalent.</li>
+<li>At least 6 months experience in Embedded System software development.</li>
+<li>Hands-on experience in Microcontroller programming.</li>
+<li>Very good knowledge of C and Assembly.</li>
+<li>Good understanding of DMM and DSO.</li>
+<li>Must be familiar with Timer, ADC, UART, I2C, SPI, RS485, 7-Segment and LCD interfaces.</li>
+</ul>
 
-    <div class="job-card">
+</div>
 
-        <div class="job-header">
-            <div>
-                <div class="job-title">Assembler / Soldering Assembler</div>
-                <div class="job-openings">Open Positions: 2</div>
-            </div>
+<div class="job-card">
 
-            <div class="arrow">▼</div>
-        </div>
+<div class="job-number">
+POSITION 04
+</div>
 
-        <div class="job-content">
-            <div class="job-content-inner">
-                <ul>
-                    <li>Hands-on experience in through-hole and SMD soldering.</li>
-                    <li>Knowledge of schematics, PCB layouts, Gerber files and mechanical drawings.</li>
-                    <li>Good team player.</li>
-                    <li>Good understanding of DMM and DSO.</li>
-                    <li>Ability to work under short deadlines.</li>
-                </ul>
-            </div>
-        </div>
+<div class="job-title">
+Assembler /
+Soldering Assembler
+</div>
 
-    </div>
+<div class="job-openings">
+Open Positions : 2
+</div>
+
+<ul>
+<li>Hands-on experience in through-hole and SMD soldering.</li>
+<li>Knowledge of schematics, PCB layouts, Gerber files and mechanical drawings.</li>
+<li>Good team player.</li>
+<li>Good understanding of DMM and DSO.</li>
+<li>Ability to work under short deadlines.</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="why-join">
+
+<div class="why-inner">
+
+<div class="label">
+Why IABEX
+</div>
+
+<h2 class="section-heading">
+Build technology that matters.
+</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>Real Engineering</h3>
+<p>
+Work on actual industrial products, embedded systems,
+automation projects and electronics solutions used by customers.
+</p>
+</div>
+
+<div class="why-card">
+<h3>Growth Opportunity</h3>
+<p>
+Gain exposure across hardware, firmware,
+testing, production and customer deployment.
+</p>
+</div>
+
+<div class="why-card">
+<h3>Innovation Driven</h3>
+<p>
+Contribute to cutting-edge embedded systems,
+IoT products and Special Purpose Machines.
+</p>
+</div>
+
+<div class="why-card">
+<h3>Collaborative Team</h3>
+<p>
+Work alongside experienced engineers and
+professionals who value learning and teamwork.
+</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <section class="apply">
 
-    <h2>Ready to Join IABEX?</h2>
+<div class="apply-inner">
 
-    <p>
-        Send your resume and application to our recruitment team.
-    </p>
+<div class="label">
+Apply Today
+</div>
 
-    <a href="mailto:info@iabex.net" class="apply-btn">
-        Apply Now
-    </a>
+<h2>
+Ready to Join IABEX?
+</h2>
+
+<p>
+
+Send your resume and application to our recruitment team.
+We are always interested in hearing from talented individuals
+who are passionate about electronics, embedded systems,
+automation and innovation.
+
+</p>
+
+<a href="mailto:info@iabex.net" class="apply-btn">
+Apply Now
+</a>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 IABEX Technologies. All Rights Reserved.
+
+<div class="footer-copy">
+© 2024 IABEX Technologies. All Rights Reserved.
+</div>
+
+<div class="footer-mark">
+IABEX / IT'S ALL ABOUT ELECTRONIX
+</div>
+
 </footer>
 
+<style>
+
+/* ──────────────────────────
+   FOOTER
+────────────────────────── */
+
+footer{
+
+    background:var(--text);
+
+    padding:30px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-top:1px solid var(--line);
+}
+
+.footer-copy{
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.75rem;
+
+    letter-spacing:.05em;
+}
+
+.footer-mark{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--red);
+
+    font-size:.7rem;
+
+    letter-spacing:.15em;
+}
+
+/* ──────────────────────────
+   MOBILE
+────────────────────────── */
+
+@media(max-width:1100px){
+
+    .jobs-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        padding:0 20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero,
+    section{
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero-slash{
+        width:65%;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+}
+
+</style>
 <script>
 
-const jobs = document.querySelectorAll(".job-card");
+const fill = document.getElementById('traceFill');
+const dot = document.getElementById('traceDot');
 
-jobs.forEach(job => {
+window.addEventListener('scroll', () => {
 
-    const header = job.querySelector(".job-header");
+    const pct =
+        window.scrollY /
+        (document.body.scrollHeight - window.innerHeight);
 
-    header.addEventListener("click", () => {
+    const h = pct * 100;
 
-        job.classList.toggle("active");
-
-        const content = job.querySelector(".job-content");
-
-        if(content.style.maxHeight){
-            content.style.maxHeight = null;
-        }else{
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-
-    });
+    fill.style.height = h + 'vh';
+    dot.style.top = h + 'vh';
 
 });
 
 </script>
-
 </body>
 </html>
