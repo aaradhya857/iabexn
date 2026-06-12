@@ -1,584 +1,2463 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products & Services - IABEX Technologies</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Products & Services | IABEX Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
+/* ──────────────────────────
+   RESET
+────────────────────────── */
+
+*,*::before,*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-body{
-    background:#fff;
-    color:#333;
+:root{
+
+    --red:#ed2024;
+    --red-light:rgba(237,32,36,.08);
+
+    --bg:#ffffff;
+    --bg2:#fafafa;
+
+    --line:rgba(0,0,0,.08);
+    --line-strong:rgba(0,0,0,.14);
+
+    --text:#111111;
+    --muted:#666666;
+    --white:#ffffff;
 }
 
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'Space Grotesk',sans-serif;
+
+    overflow-x:hidden;
+}
+
+/* ──────────────────────────
+   NAVBAR
+────────────────────────── */
+
 nav{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    background:white;
-    padding:18px 8%;
+
+    height:70px;
+
+    padding:0 60px;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid var(--line);
+
     z-index:1000;
 }
 
-.logo img{
-    height:55px;
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+}
+
+.logo-mark{
+
+    width:36px;
+    height:36px;
+
+    border:2px solid var(--red);
+
+    display:grid;
+    place-items:center;
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.7rem;
+
+    color:var(--red);
+
+    position:relative;
+}
+
+.logo-mark::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:4px;
+    left:4px;
+
+    width:6px;
+    height:6px;
+
+    background:var(--red);
+}
+
+.logo-name{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    color:var(--text);
+
+    text-transform:uppercase;
+}
+
+.logo-name span{
+    color:var(--red);
 }
 
 nav ul{
+
     display:flex;
-    gap:35px;
+
     list-style:none;
+
+    gap:36px;
 }
 
 nav ul a{
+
     text-decoration:none;
-    color:#333;
+
+    color:var(--muted);
+
+    font-size:.82rem;
+
     font-weight:500;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    transition:.2s;
 }
 
 nav ul a:hover{
-    color:#ed2024;
+
+    color:var(--red);
 }
 
-.nav-btn{
-    background:#ed2024;
+.nav-cta{
+
+    background:var(--red);
+
+    border:1px solid var(--red);
+
     color:white;
-    border:2px solid #ed2024;
-    padding:12px 24px;
-    border-radius:30px;
+
+    padding:8px 22px;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:.25s;
 }
 
-.nav-btn:hover{
-    background:white;
-    color:black;
+.nav-cta:hover{
+
+    background:transparent;
+
+    color:var(--red);
 }
+
+/* ──────────────────────────
+   HERO
+────────────────────────── */
 
 .hero{
-    padding:170px 8% 100px;
-    text-align:center;
-    background:#f8f9fb;
+
+    min-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:120px 60px 80px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+
+    background-size:60px 60px;
+}
+
+.hero-slash{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:42%;
+    height:100%;
+
+    background:var(--red);
+
+    clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
+}
+.hero-eyebrow{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.72rem;
+
+    color:var(--muted);
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-eyebrow::before{
+
+    content:'';
+
+    width:40px;
+
+    height:1px;
+
+    background:var(--red);
 }
 
 .hero h1{
-    font-size:4rem;
-    margin-bottom:15px;
-}
 
-.hero p{
+    font-size:clamp(3.5rem,6vw,5.8rem);
+
+    font-weight:700;
+
+    line-height:1.05;
+
     max-width:850px;
-    margin:auto;
-    color:#666;
-    line-height:1.8;
+
+    margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.section{
-    padding:80px 8%;
+.hero h1 em{
+
+    color:var(--red);
+
+    font-style:normal;
 }
 
-.section-title{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:60px;
-    color:#111;
+.hero-sub{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.85rem;
+
+    color:var(--muted);
+
+    letter-spacing:.15em;
+
+    margin-bottom:40px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.section-title::after{
+.hero-description{
+
+    max-width:760px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* ──────────────────────────
+   SECTION COMMON
+────────────────────────── */
+
+section{
+    padding:100px 60px;
+}
+
+.label{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.68rem;
+
+    color:var(--red);
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.label::before{
+
     content:'';
-    display:block;
-    width:80px;
-    height:4px;
-    background:#ed2024;
-    margin:15px auto;
+
+    width:30px;
+
+    height:2px;
+
+    background:var(--red);
 }
 
-.product-grid{
+.section-heading{
+
+    font-size:clamp(2rem,3.5vw,3rem);
+
+    font-weight:700;
+
+    color:var(--text);
+
+    line-height:1.1;
+
+    letter-spacing:-.01em;
+}
+
+.section-description{
+
+    max-width:760px;
+
+    margin-top:20px;
+
+    color:var(--muted);
+
+    line-height:1.9;
+}
+
+/* ──────────────────────────
+   PRODUCT SECTIONS
+────────────────────────── */
+
+.products-section{
+
+    background:var(--bg);
+}
+
+.products-section.alt{
+
+    background:var(--bg2);
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+}
+
+.products-inner{
+
+    max-width:1200px;
+
+    margin:0 auto;
+}
+
+.products-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1px;
+
+    background:var(--line-strong);
+
+    border:1px solid var(--line-strong);
+
+    margin-top:50px;
 }
 
 .product-card{
+
     background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    padding:40px;
+
     transition:.3s;
-    border-top:4px solid #ed2024;
+
+    position:relative;
+
+    min-height:260px;
+
+    display:flex;
+
+    flex-direction:column;
 }
 
 .product-card:hover{
-    transform:translateY(-8px);
+
+    background:var(--red-light);
 }
 
-.product-card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
+.product-number{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--red);
+
+    font-size:.75rem;
+
+    letter-spacing:.18em;
+
+    margin-bottom:18px;
 }
 
-.product-content{
-    padding:25px;
+.product-card h3{
+
+    font-size:1.3rem;
+
+    line-height:1.3;
+
+    margin-bottom:15px;
+
+    color:var(--text);
 }
 
-.product-content h3{
-    color:#111;
-    margin-bottom:12px;
+.product-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+    flex:1;
 }
 
-.product-content p{
-    color:#666;
-    line-height:1.7;
-    margin-bottom:20px;
-}
+.product-btn{
 
-.view-btn{
-    background:#ed2024;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:25px;
-    cursor:pointer;
+    align-self:flex-start;
+
+    background:transparent;
+
+    border:1px solid var(--red);
+
+    color:var(--red);
+
+    padding:10px 18px;
+
+    font-size:.75rem;
+
     font-weight:600;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.25s;
 }
 
-.view-btn:hover{
-    background:white;
-    color:black;
-    border:2px solid #ed2024;
+.product-btn:hover{
+
+    background:var(--red);
+
+    color:white;
 }
+/* ──────────────────────────
+   MODAL
+────────────────────────── */
 
 .modal{
+
     display:none;
+
     position:fixed;
-    z-index:9999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.65);
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(6px);
+
+    z-index:5000;
+
     overflow:auto;
+
+    padding:40px;
 }
 
 .modal-content{
+
     background:white;
-    width:90%;
+
     max-width:900px;
-    margin:50px auto;
-    border-radius:20px;
-    padding:40px;
+
+    margin:40px auto;
+
+    padding:50px;
+
+    border:1px solid var(--line);
+
     position:relative;
 }
 
 .close{
+
     position:absolute;
+
+    top:25px;
+
     right:25px;
-    top:20px;
-    font-size:30px;
+
+    font-size:2rem;
+
+    color:var(--red);
+
     cursor:pointer;
-    color:#ed2024;
+
+    transition:.2s;
+}
+
+.close:hover{
+
+    transform:rotate(90deg);
 }
 
 .modal-content h2{
-    margin-bottom:20px;
-    color:#111;
+
+    margin-bottom:25px;
+
+    font-size:2rem;
+
+    color:var(--text);
 }
 
 .modal-content ul{
+
     padding-left:20px;
 }
 
 .modal-content li{
-    margin-bottom:12px;
-    line-height:1.7;
+
+    margin-bottom:14px;
+
+    color:var(--muted);
+
+    line-height:1.8;
 }
+
+/* ──────────────────────────
+   CUSTOM SOLUTIONS
+────────────────────────── */
+
+.custom-solutions{
+
+    background:var(--red);
+}
+
+.custom-inner{
+
+    max-width:1140px;
+
+    margin:0 auto;
+}
+
+.custom-solutions .label{
+
+    color:rgba(255,255,255,.85);
+}
+
+.custom-solutions .label::before{
+
+    background:rgba(255,255,255,.85);
+}
+
+.custom-solutions h2{
+
+    color:white;
+
+    font-size:clamp(2.5rem,4vw,4rem);
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.custom-solutions p{
+
+    color:rgba(255,255,255,.82);
+
+    max-width:760px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+.custom-btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.custom-btn:hover{
+
+    background:white;
+
+    color:var(--red);
+}
+
+/* ──────────────────────────
+   FOOTER
+────────────────────────── */
 
 footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:60px;
+
+    background:var(--text);
+
+    padding:30px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
 }
 
-@media(max-width:900px){
+.footer-copy{
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.75rem;
+
+    letter-spacing:.05em;
+}
+
+.footer-mark{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--red);
+
+    font-size:.7rem;
+
+    letter-spacing:.15em;
+}
+
+/* ──────────────────────────
+   MOBILE
+────────────────────────── */
+
+@media(max-width:1100px){
+
+    .products-grid{
+
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        padding:0 20px;
+    }
 
     nav ul{
         display:none;
     }
 
-    .hero h1{
-        font-size:2.8rem;
+    .hero,
+    section{
+
+        padding-left:25px;
+        padding-right:25px;
     }
 
-    .section-title{
-        font-size:2.2rem;
+    .hero h1{
+
+        font-size:3rem;
+    }
+
+    .hero-slash{
+
+        width:65%;
+    }
+
+    .products-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .modal-content{
+
+        padding:30px;
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
     }
 }
 
 </style>
 </head>
-<body>
 
+<body>
+    <!-- PCB TRACE -->
+
+<div class="trace-container">
+
+    <div class="trace-bg"></div>
+
+    <div class="trace-fill"
+    id="traceFill"></div>
+
+    <div class="trace-dot"
+    id="traceDot"></div>
+
+</div>
+<!-- NAV -->
 <nav>
 
-<div class="logo">
-<img src="logo.bmp">
-</div>
+<a href="index.html" class="logo">
+    <div class="logo-mark">IX</div>
+    <span class="logo-name">IAB<span>EX</span></span>
+</a>
 
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About Us</a></li>
-<li><a href="products.html">Products & Services</a></li>
-<li><a href="careers.html">Careers</a></li>
-<li><a href="index.html#contact">Contact Us</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
 </ul>
 
-<button class="nav-btn">Contact Us</button>
+<a href="mailto:info@iabex.net" class="nav-cta">
+    Get in Touch
+</a>
 
 </nav>
+<style>
+.hero{
+
+    min-height:92vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:120px 60px 80px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+
+    background-size:60px 60px;
+}
+
+.hero-slash{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:42%;
+    height:100%;
+
+    background:var(--red);
+
+    clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
+}
+
+.hero-eyebrow{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.72rem;
+
+    color:var(--muted);
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-eyebrow::before{
+
+    content:'';
+
+    width:40px;
+
+    height:1px;
+
+    background:var(--red);
+}
+
+.hero h1{
+
+    font-size:clamp(4rem,7vw,6.5rem);
+
+    line-height:1;
+
+    font-weight:700;
+
+    max-width:850px;
+
+    margin-bottom:25px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero h1 em{
+
+    color:var(--red);
+
+    font-style:normal;
+}
+
+.hero-sub{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--muted);
+
+    letter-spacing:.18em;
+
+    font-size:.85rem;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-description{
+
+    max-width:760px;
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* ──────────────────────────
+   SECTION COMMON
+────────────────────────── */
+
+section{
+    padding:100px 60px;
+}
+
+.label{
+
+    font-family:'Space Mono',monospace;
+
+    font-size:.68rem;
+
+    color:var(--red);
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.label::before{
+
+    content:'';
+
+    width:30px;
+
+    height:2px;
+
+    background:var(--red);
+}
+
+.section-heading{
+
+    font-size:clamp(2rem,3.5vw,3rem);
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    max-width:700px;
+}
+
+/* ──────────────────────────
+   PRODUCT SECTION
+────────────────────────── */
+
+.product-section{
+
+    background:white;
+}
+
+.product-inner{
+
+    max-width:1300px;
+
+    margin:0 auto;
+}
+
+.product-grid{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1px;
+
+    background:var(--line-strong);
+
+    border:1px solid var(--line-strong);
+}
+
+.product-card{
+
+    background:white;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.product-card:hover{
+
+    background:var(--red-light);
+}
+
+.product-image{
+
+    width:100%;
+
+    height:260px;
+
+    overflow:hidden;
+
+    border-bottom:1px solid var(--line);
+}
+
+.product-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+}
+
+.product-card:hover img{
+
+    transform:scale(1.06);
+}
+
+.product-content{
+
+    padding:35px;
+}
+
+.product-number{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--red);
+
+    font-size:.75rem;
+
+    letter-spacing:.15em;
+
+    margin-bottom:18px;
+}
+
+.product-title{
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    color:var(--text);
+}
+
+.product-description{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.spec-btn{
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--red);
+
+    font-family:'Space Mono',monospace;
+
+    letter-spacing:.12em;
+
+    cursor:pointer;
+
+    font-size:.78rem;
+
+    text-transform:uppercase;
+
+    padding:0;
+}
+
+.spec-btn:hover{
+
+    opacity:.7;
+}
+</style>
+<!-- ──────────────────────────
+     HERO
+────────────────────────── -->
 
 <section class="hero">
 
-<h1>Products & Services</h1>
+    <div class="hero-slash"></div>
+
+    <div class="hero-eyebrow">
+        Pune, India — Products & Services
+    </div>
+
+    <h1>
+        Products &<br>
+        <em>Services.</em>
+    </h1>
+
+    <p class="hero-sub">
+        INDUSTRIAL ELECTRONICS • EMBEDDED SYSTEMS • AUTOMATION
+    </p>
+
+    <p class="hero-description">
+
+        We provide innovative embedded systems, industrial electronics,
+        process automation products, solar LED lighting solutions and
+        special purpose machine controllers tailored to industry needs.
+
+    </p>
+
+</section>
+
+<!-- ──────────────────────────
+     INDUSTRIAL APPLICATIONS
+────────────────────────── -->
+
+<section class="product-section">
+
+<div class="product-inner">
+
+<div class="label">
+Industrial Applications
+</div>
+
+<h2 class="section-heading">
+Engineered solutions for industrial connectivity, control and monitoring.
+</h2>
+
+<div class="product-grid">
+
+<!-- PRODUCT 01 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="dotmatrix.png" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 01
+        </div>
+
+        <div class="product-title">
+            Dot Matrix Real Time Clock
+        </div>
+
+        <div class="product-description">
+            Reliable LED based clock solution for offices,
+            production floors, halls and industrial facilities.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('clock')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 02 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="smarttouch.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 02
+        </div>
+
+        <div class="product-title">
+            SmartTouch Button
+        </div>
+
+        <div class="product-description">
+            Capacitive touch technology with customizable
+            backlight colors for premium interfaces.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('touch')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 03 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="liftcontroller.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 03
+        </div>
+
+        <div class="product-title">
+            Lift Controller
+        </div>
+
+        <div class="product-description">
+            Reliable serial lift control system with advanced
+            LCD and capacitive touch interface.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('lift')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 04 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="usbserial.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 04
+        </div>
+
+        <div class="product-title">
+            USB To Serial Converters
+        </div>
+
+        <div class="product-description">
+            USB to RS485, RS422 and RS232 conversion
+            solutions for embedded systems.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('usbserial')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 05 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="canrs232.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 05
+        </div>
+
+        <div class="product-title">
+            CAN To RS232
+        </div>
+
+        <div class="product-description">
+            Compact dongle providing instant CAN connectivity
+            through standard RS232 ports.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('can')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 06 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="GPIO.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 06
+        </div>
+
+        <div class="product-title">
+            USB To GPIO
+        </div>
+
+        <div class="product-description">
+            8-channel USB GPIO module for seamless connection
+            between computers and real-world devices.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('gpio')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ──────────────────────────
+     PROCESS INDUSTRY
+────────────────────────── -->
+
+<section class="product-section">
+
+<div class="product-inner">
+
+<div class="label">
+Process Industry
+</div>
+
+<h2 class="section-heading">
+Precision instruments and control systems for industrial process applications.
+</h2>
+
+<div class="product-grid">
+
+<!-- PRODUCT 07 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="timer.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 07
+        </div>
+
+        <div class="product-title">
+            Customized Timer / Counter
+        </div>
+
+        <div class="product-description">
+            Flexible timer, counter and pulse generator solution
+            for industrial process applications.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('timer')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 08 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="phmeter.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 08
+        </div>
+
+        <div class="product-title">
+            pH Meter
+        </div>
+
+        <div class="product-description">
+            Accurate pH and temperature measurement system
+            with compensation and calibration features.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('ph')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 09 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="flowlcd.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 09
+        </div>
+
+        <div class="product-title">
+            Flow Totalizer (16x2 LCD)
+        </div>
+
+        <div class="product-description">
+            Flow monitoring, batch counting and totalization
+            with interactive LCD display.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('flowlcd')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 10 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="flow7seg.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 10
+        </div>
+
+        <div class="product-title">
+            Flow Totalizer (7-Segment)
+        </div>
+
+        <div class="product-description">
+            Industrial flow measurement with pulse and
+            analog transmitter support.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('flow7seg')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 11 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="okrpmeter.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 11
+        </div>
+
+        <div class="product-title">
+            ORP Meter
+        </div>
+
+        <div class="product-description">
+            Precise oxidation-reduction potential measurement
+            solution for water quality monitoring.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('orp')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 12 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="tdsmeter.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 12
+        </div>
+
+        <div class="product-title">
+            TDS Meter
+        </div>
+
+        <div class="product-description">
+            Reliable total dissolved solids measurement
+            for industrial process monitoring.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('tds')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ──────────────────────────
+     SOLAR LED LIGHTING
+────────────────────────── -->
+
+<section class="product-section">
+
+<div class="product-inner">
+
+<div class="label">
+Solar LED Lighting
+</div>
+
+<h2 class="section-heading">
+Efficient solar-powered lighting and energy management solutions.
+</h2>
+
+<div class="product-grid">
+
+<!-- PRODUCT 13 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="streetlight.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 13
+        </div>
+
+        <div class="product-title">
+            Solar Powered LED Street Lights
+        </div>
+
+        <div class="product-description">
+            Environment-friendly solar powered lighting solution
+            for streets and public spaces.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('streetlight')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 14 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="lantern.png" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 14
+        </div>
+
+        <div class="product-title">
+            Solar Powered Lantern
+        </div>
+
+        <div class="product-description">
+            Compact and cost-effective solar powered
+            lighting solution.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('lantern')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 15 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="chargecontroller.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 15
+        </div>
+
+        <div class="product-title">
+            Solar Charge Controller
+        </div>
+
+        <div class="product-description">
+            Advanced charge controller supporting multiple
+            battery chemistries and solar configurations.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('chargecontroller')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 16 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="streetdriver.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 16
+        </div>
+
+        <div class="product-title">
+            Solar Charge Controller Cum LED Driver
+        </div>
+
+        <div class="product-description">
+            Integrated solar charge controller and street
+            light LED driver solution.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('streetdriver')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 17 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="slcc12w.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 17
+        </div>
+
+        <div class="product-title">
+            SLCC-12W
+        </div>
+
+        <div class="product-description">
+            High efficiency solar LED street light controller
+            for 12W applications.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('slcc12')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 18 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="slcc9w.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 18
+        </div>
+
+        <div class="product-title">
+            SLCC-9W
+        </div>
+
+        <div class="product-description">
+            Reliable compact solar street light controller
+            for low wattage applications.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('slcc9')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 19 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="homelighting.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 19
+        </div>
+
+        <div class="product-title">
+            Home Lighting System
+        </div>
+
+        <div class="product-description">
+            Solar powered home lighting solution
+            with USB charging support.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('home')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 20 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="mppt.jpg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 20
+        </div>
+
+        <div class="product-title">
+            MPPT Charge Controller 10A
+        </div>
+
+        <div class="product-description">
+            Maximum Power Point Tracking controller
+            for improved solar charging efficiency.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('mppt')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ──────────────────────────
+     SPM CONTROLLERS
+────────────────────────── -->
+
+<section class="product-section">
+
+<div class="product-inner">
+
+<div class="label">
+SPM Controllers
+</div>
+
+<h2 class="section-heading">
+Purpose-built control systems for specialized industrial machinery.
+</h2>
+
+<div class="product-grid">
+
+<!-- PRODUCT 21 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="leaktester.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 21
+        </div>
+
+        <div class="product-title">
+            Leak Tester
+        </div>
+
+        <div class="product-description">
+            Accurate leak detection and pressure monitoring
+            solution for machine components.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('leak')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 22 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="temperatureprofile.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 22
+        </div>
+
+        <div class="product-title">
+            Temperature Profile Manager
+        </div>
+
+        <div class="product-description">
+            Compact system for monitoring carbon, silicon
+            and silicate content in liquid metal.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('temp')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 23 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="acdatalogger.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 23
+        </div>
+
+        <div class="product-title">
+            AC Data Logger
+        </div>
+
+        <div class="product-description">
+            Continuous AC voltage, current and power
+            monitoring with extensive data logging.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('aclog')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCT 24 -->
+
+<div class="product-card">
+
+    <div class="product-image">
+        <img src="dcdatalogger.jpeg" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <div class="product-number">
+            PRODUCT 24
+        </div>
+
+        <div class="product-title">
+            DC Data Logger
+        </div>
+
+        <div class="product-description">
+            Continuous DC system monitoring and storage
+            of operational parameters.
+        </div>
+
+        <button class="spec-btn"
+        onclick="openModal('dclog')">
+            View Specifications
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ──────────────────────────
+     CUSTOM SOLUTIONS CTA
+────────────────────────── -->
+
+<section class="apply">
+
+<div class="apply-inner">
+
+<div class="label">
+Custom Development
+</div>
+
+<h2>
+Need a Custom Solution?
+</h2>
 
 <p>
-We provide innovative embedded systems, industrial electronics,
-process automation products, solar LED lighting solutions and
-special purpose machine controllers tailored to industry needs.
+
+IABEX Technologies specializes in custom electronics,
+embedded systems, industrial automation, renewable energy
+solutions and special purpose machine development.
+
 </p>
 
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-Industrial Applications
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="dotmatrix.png">
-<div class="product-content">
-<h3>Dot Matrix Real Time Clock</h3>
-<p>Reliable LED based clock solution for offices, production floors, halls and industrial facilities.</p>
-<button class="view-btn" onclick="openModal('clock')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="smarttouch.jpg">
-<div class="product-content">
-<h3>SmartTouch Button</h3>
-<p>Capacitive touch technology with customizable backlight colors for premium interfaces.</p>
-<button class="view-btn" onclick="openModal('touch')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="liftcontroller.jpeg">
-<div class="product-content">
-<h3>Lift Controller</h3>
-<p>Reliable serial lift control system with advanced LCD and capacitive touch interface.</p>
-<button class="view-btn" onclick="openModal('lift')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="usbserial.jpeg">
-<div class="product-content">
-<h3>USB To Serial Converters</h3>
-<p>USB to RS485, RS422 and RS232 conversion solutions for embedded systems.</p>
-<button class="view-btn" onclick="openModal('usbserial')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="canrs232.jpeg">
-<div class="product-content">
-<h3>CAN To RS232</h3>
-<p>Compact dongle providing instant CAN connectivity through standard RS232 ports.</p>
-<button class="view-btn" onclick="openModal('can')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="GPIO.jpg">
-<div class="product-content">
-<h3>USB To GPIO</h3>
-<p>8-channel USB GPIO module for seamless connection between computers and real-world devices.</p>
-<button class="view-btn" onclick="openModal('gpio')">View Specifications</button>
-</div>
-</div>
-
-</div>
-
-</section>
-<section class="section">
-
-<h2 class="section-title">
-Process Industry
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="timer.jpeg">
-<div class="product-content">
-<h3>Customized Timer / Counter</h3>
-<p>Flexible timer, counter and pulse generator solution for industrial process applications.</p>
-<button class="view-btn" onclick="openModal('timer')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="phmeter.jpg">
-<div class="product-content">
-<h3>pH Meter</h3>
-<p>Accurate pH and temperature measurement system with compensation and calibration features.</p>
-<button class="view-btn" onclick="openModal('ph')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="flowlcd.jpeg">
-<div class="product-content">
-<h3>Flow Totalizer (16x2 LCD)</h3>
-<p>Flow monitoring, batch counting and totalization with interactive LCD display.</p>
-<button class="view-btn" onclick="openModal('flowlcd')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="flow7seg.jpeg">
-<div class="product-content">
-<h3>Flow Totalizer (7-Segment)</h3>
-<p>Industrial flow measurement with pulse and analog transmitter support.</p>
-<button class="view-btn" onclick="openModal('flow7seg')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="okrpmeter.jpg">
-<div class="product-content">
-<h3>ORP Meter</h3>
-<p>Precise oxidation-reduction potential measurement solution for water quality monitoring.</p>
-<button class="view-btn" onclick="openModal('orp')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="tdsmeter.jpg">
-<div class="product-content">
-<h3>TDS Meter</h3>
-<p>Reliable total dissolved solids measurement for industrial process monitoring.</p>
-<button class="view-btn" onclick="openModal('tds')">View Specifications</button>
-</div>
-</div>
+<a href="mailto:info@iabex.net" class="apply-btn">
+Contact Us
+</a>
 
 </div>
 
 </section>
 
-<section class="section">
-
-<h2 class="section-title">
-Solar LED Lighting
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="streetlight.jpg">
-<div class="product-content">
-<h3>Solar Powered LED Street Lights</h3>
-<p>Environment-friendly solar powered lighting solution for streets and public spaces.</p>
-<button class="view-btn" onclick="openModal('streetlight')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="lantern.png">
-<div class="product-content">
-<h3>Solar Powered Lantern</h3>
-<p>Compact and cost-effective solar powered lighting solution.</p>
-<button class="view-btn" onclick="openModal('lantern')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="chargecontroller.jpeg">
-<div class="product-content">
-<h3>Solar Charge Controller</h3>
-<p>Advanced charge controller supporting multiple battery chemistries and solar configurations.</p>
-<button class="view-btn" onclick="openModal('chargecontroller')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="streetdriver.jpeg">
-<div class="product-content">
-<h3>Solar Charge Controller Cum LED Driver</h3>
-<p>Integrated solar charge controller and street light LED driver solution.</p>
-<button class="view-btn" onclick="openModal('streetdriver')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="slcc12w.jpeg">
-<div class="product-content">
-<h3>SLCC-12W</h3>
-<p>High efficiency solar LED street light controller for 12W applications.</p>
-<button class="view-btn" onclick="openModal('slcc12')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="slcc9w.jpeg">
-<div class="product-content">
-<h3>SLCC-9W</h3>
-<p>Reliable compact solar street light controller for low wattage applications.</p>
-<button class="view-btn" onclick="openModal('slcc9')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="homelighting.jpg">
-<div class="product-content">
-<h3>Home Lighting System</h3>
-<p>Solar powered home lighting solution with USB charging support.</p>
-<button class="view-btn" onclick="openModal('home')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="mppt.jpg">
-<div class="product-content">
-<h3>MPPT Charge Controller 10A</h3>
-<p>Maximum Power Point Tracking controller for improved solar charging efficiency.</p>
-<button class="view-btn" onclick="openModal('mppt')">View Specifications</button>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-SPM Controllers
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="leaktester.jpeg">
-<div class="product-content">
-<h3>Leak Tester</h3>
-<p>Accurate leak detection and pressure monitoring solution for machine components.</p>
-<button class="view-btn" onclick="openModal('leak')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="temperatureprofile.jpeg">
-<div class="product-content">
-<h3>Temperature Profile Manager</h3>
-<p>Compact system for monitoring carbon, silicon and silicate content in liquid metal.</p>
-<button class="view-btn" onclick="openModal('temp')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="acdatalogger.jpeg">
-<div class="product-content">
-<h3>AC Data Logger</h3>
-<p>Continuous AC voltage, current and power monitoring with extensive data logging.</p>
-<button class="view-btn" onclick="openModal('aclog')">View Specifications</button>
-</div>
-</div>
-
-<div class="product-card">
-<img src="dcdatalogger.jpeg">
-<div class="product-content">
-<h3>DC Data Logger</h3>
-<p>Continuous DC system monitoring and storage of operational parameters.</p>
-<button class="view-btn" onclick="openModal('dclog')">View Specifications</button>
-</div>
-</div>
-
-</div>
-
-</section>
-<!-- PRODUCT MODAL -->
+<!-- ──────────────────────────
+     MODAL
+────────────────────────── -->
 
 <div id="productModal" class="modal">
 
     <div class="modal-content">
 
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close"
+        onclick="closeModal()">
+            ×
+        </span>
 
         <div id="modalBody"></div>
 
     </div>
 
 </div>
+<style>/* ──────────────────────────
+   APPLY SECTION
+────────────────────────── */
 
-<section class="section" style="background:#f8f9fb;text-align:center;">
+.apply{
 
-    <h2 class="section-title">
-        Need a Custom Solution?
-    </h2>
+    background:var(--red);
+}
 
-    <p style="max-width:800px;margin:auto;color:#666;line-height:1.8;">
-        IABEX Technologies specializes in custom electronics,
-        embedded systems, industrial automation, renewable energy
-        solutions and special purpose machine development.
-    </p>
+.apply-inner{
 
-    <br><br>
+    max-width:1140px;
 
-    <a href="mailto:info@iabex.net"
-       style="
-       background:#ed2024;
-       color:white;
-       text-decoration:none;
-       padding:16px 35px;
-       border-radius:30px;
-       display:inline-block;
-       font-weight:600;">
-       Contact Us
-    </a>
+    margin:0 auto;
+}
 
-</section>
+.apply .label{
 
+    color:rgba(255,255,255,.8);
+}
+
+.apply .label::before{
+
+    background:rgba(255,255,255,.8);
+}
+
+.apply h2{
+
+    color:white;
+
+    font-size:clamp(2.5rem,4vw,4rem);
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.apply p{
+
+    color:rgba(255,255,255,.8);
+
+    max-width:700px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+.apply-btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.apply-btn:hover{
+
+    background:white;
+
+    color:var(--red);
+}
+
+/* ──────────────────────────
+   MODAL
+────────────────────────── */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+    backdrop-filter:blur(8px);
+
+    z-index:5000;
+
+    overflow-y:auto;
+
+    padding:40px;
+}
+
+.modal-content{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    background:white;
+
+    border:1px solid var(--line);
+
+    padding:50px;
+
+    position:relative;
+}
+
+.close{
+
+    position:absolute;
+
+    right:25px;
+    top:20px;
+
+    font-size:2rem;
+
+    color:var(--red);
+
+    cursor:pointer;
+}
+
+.modal-content h2{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+    color:var(--text);
+}
+
+.modal-content ul{
+
+    padding-left:18px;
+}
+
+.modal-content li{
+
+    margin-bottom:15px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+}
+/* ──────────────────────────
+   PCB TRACE SCROLL INDICATOR
+────────────────────────── */
+
+.trace-container{
+
+    position:fixed;
+
+    right:22px;
+    top:0;
+
+    width:2px;
+    height:100vh;
+
+    z-index:900;
+
+    pointer-events:none;
+}
+
+.trace-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--line-strong);
+}
+
+.trace-fill{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:0;
+
+    background:var(--red);
+
+    box-shadow:0 0 10px rgba(237,32,36,.45);
+}
+
+.trace-dot{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--red);
+
+    box-shadow:
+    0 0 0 4px rgba(237,32,36,.12),
+    0 0 12px rgba(237,32,36,.6);
+}
+
+/* ──────────────────────────
+   FOOTER
+────────────────────────── */
+
+footer{
+
+    background:var(--text);
+
+    padding:30px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.footer-copy{
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.75rem;
+
+    letter-spacing:.05em;
+}
+
+.footer-mark{
+
+    font-family:'Space Mono',monospace;
+
+    color:var(--red);
+
+    font-size:.7rem;
+
+    letter-spacing:.15em;
+}
+
+/* ──────────────────────────
+   ANIMATIONS
+────────────────────────── */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:none;
+}
+
+/* ──────────────────────────
+   MOBILE
+────────────────────────── */
+
+@media(max-width:1200px){
+
+    .product-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+
+        padding:0 20px;
+    }
+
+    nav ul{
+
+        display:none;
+    }
+
+    .hero,
+    section{
+
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+    }
+
+    .hero-slash{
+
+        width:65%;
+    }
+
+    .product-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+
+        height:220px;
+    }
+
+    .modal{
+
+        padding:15px;
+    }
+
+    .modal-content{
+
+        padding:30px 25px;
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+    .trace-container{
+
+        display:none;
+    }
+}
+</style>
 <footer>
-    © 2026 IABEX Technologies. All Rights Reserved.
-</footer>
 
+<div class="footer-copy">
+© 2024 IABEX Technologies. All Rights Reserved.
+</div>
+
+<div class="footer-mark">
+IABEX / IT'S ALL ABOUT ELECTRONIX
+</div>
+
+</footer>
 <script>
 
 const specs = {
@@ -842,31 +2721,98 @@ dclog: `
 
 function openModal(product){
 
-    document.getElementById("modalBody").innerHTML =
+    document.getElementById('modalBody').innerHTML =
     specs[product];
 
-    document.getElementById("productModal").style.display =
-    "block";
+    document.getElementById('productModal').style.display =
+    'block';
+
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal(){
 
-    document.getElementById("productModal").style.display =
-    "none";
+    document.getElementById('productModal').style.display =
+    'none';
+
+    document.body.style.overflow = 'auto';
 }
 
-window.onclick = function(event){
+window.onclick = function(e){
 
     const modal =
-    document.getElementById("productModal");
+    document.getElementById('productModal');
 
-    if(event.target == modal){
+    if(e.target === modal){
 
-        modal.style.display = "none";
+        closeModal();
     }
 }
 
-</script>
+/* PCB TRACE */
 
+const fill =
+document.getElementById('traceFill');
+
+const dot =
+document.getElementById('traceDot');
+
+function updateTrace(){
+
+    const max =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+    const pct =
+    window.scrollY / max;
+
+    const pos =
+    pct * window.innerHeight;
+
+    fill.style.height =
+    pos + 'px';
+
+    dot.style.top =
+    pos + 'px';
+}
+
+window.addEventListener(
+'scroll',
+updateTrace
+);
+
+window.addEventListener(
+'load',
+updateTrace
+);
+
+/* SCROLL REVEAL */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('active');
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+document.querySelectorAll(
+'.product-card,.section-heading,.label'
+).forEach(el=>{
+
+    el.classList.add('reveal');
+
+    observer.observe(el);
+});
+
+</script>
 </body>
 </html>
