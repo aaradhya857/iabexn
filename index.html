@@ -127,7 +127,7 @@ nav a:hover { color: var(--red); }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 120px 60px 80px;
+  padding: 80px 60px 80px;
   position: relative;
   overflow: hidden;
   background: var(--bg);
@@ -426,14 +426,14 @@ h2.section-heading {
   display: block;
 }
 .cap-card h3 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 12px;
   line-height: 1.3;
 }
 .cap-card p {
-  font-size: 0.85rem;
+  font-size: 1.0rem;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -510,18 +510,14 @@ h2.section-heading {
 
 .clients-logo-grid img {
   width: 100%;
-  max-height: 110px;
-  padding: 16px;
-  object-fit: contain;
-
+  height: 90px;              /* fixed box height */
+  padding: 10px;
+  object-fit: contain;       /* keeps logo ratio intact */
   background: white;
   border: 1px solid var(--line);
-
-  filter: none;
-  opacity: 1.0;
-
+  display: block;
+  margin: auto;
   transition: all 0.3s ease;
-  transform: scale(1.08);
 }
 
 
@@ -614,16 +610,7 @@ h2.section-heading {
   background: var(--white);
   padding: 2px 8px;
 }
-.slideshow-wrap::after {
-  content: '';
-  position: absolute;
-  top: 21px; left: 12px;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--red);
-  animation: blink 1.2s step-end infinite;
-  z-index: 10;
-}
+
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
 .slide {
@@ -718,6 +705,7 @@ h2.section-heading {
 .contact-block a:hover { color: var(--red); }
 
 .map-frame {
+  margin-top: 210px;
   width: 100%;
   height: 420px;
   border: none;
@@ -1039,56 +1027,7 @@ footer {
   </div>
 </section>
 
-<!-- SHOWCASE -->
-<section class="showcase" id="showcase">
-  <div class="show-inner">
-    <div class="label reveal">Our work</div>
-    <h2 class="section-heading reveal">Products in the field.</h2>
-    <div class="slideshow-wrap reveal live-projects">
-      <div class="slide-placeholder active" id="ph1">
-        <div class="slide-placeholder-inner">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <rect x="10" y="10" width="60" height="60" stroke="#ed2024" stroke-width="1.5"/>
-            <rect x="22" y="22" width="36" height="36" stroke="#ccc" stroke-width="1"/>
-            <circle cx="40" cy="40" r="8" stroke="#ed2024" stroke-width="1.5"/>
-            <line x1="10" y1="40" x2="22" y2="40" stroke="#ed2024" stroke-width="1.5"/>
-            <line x1="58" y1="40" x2="70" y2="40" stroke="#ed2024" stroke-width="1.5"/>
-          </svg>
-          <div class="ph-label">SafeDur — Smart Safety System</div>
-        </div>
-      </div>
-      <div class="slide-placeholder" id="ph2">
-        <div class="slide-placeholder-inner">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <rect x="5" y="20" width="70" height="45" stroke="#ed2024" stroke-width="1.5"/>
-            <line x1="5" y1="32" x2="75" y2="32" stroke="#ccc" stroke-width="0.8"/>
-            <rect x="15" y="38" width="12" height="8" stroke="#ed2024" stroke-width="1"/>
-            <rect x="34" y="38" width="12" height="8" stroke="#ccc" stroke-width="1"/>
-            <rect x="53" y="38" width="12" height="8" stroke="#ccc" stroke-width="1"/>
-          </svg>
-          <div class="ph-label">Custom SPM Controller</div>
-        </div>
-      </div>
-      <div class="slide-placeholder" id="ph3">
-        <div class="slide-placeholder-inner">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="28" stroke="#ed2024" stroke-width="1.5"/>
-            <circle cx="40" cy="40" r="16" stroke="#ccc" stroke-width="1"/>
-            <circle cx="40" cy="40" r="4" fill="#ed2024"/>
-            <line x1="40" y1="12" x2="40" y2="24" stroke="#ed2024" stroke-width="1.5"/>
-            <line x1="40" y1="56" x2="40" y2="68" stroke="#ed2024" stroke-width="1.5"/>
-          </svg>
-          <div class="ph-label">IoT Sensor Node</div>
-        </div>
-      </div>
-      <div class="slide-dots">
-        <div class="dot active" onclick="goSlide(0)"></div>
-        <div class="dot" onclick="goSlide(1)"></div>
-        <div class="dot" onclick="goSlide(2)"></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1122,7 +1061,14 @@ footer {
       </div>
     </div>
     <div class="reveal">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1576.6397020044258!2d73.80165740068051!3d18.484328360886252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfd47669fa11%3A0x5cf33e3260b3da7e!2sIABEX%20Technologies!5e0!3m2!1sen!2sin!4v1781262807419!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe class="map-frame"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1576.6397020044258!2d73.80165740068051!3d18.484328360886252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfd47669fa11%3A0x5cf33e3260b3da7e!2sIABEX%20Technologies!5e0!3m2!1sen!2sin!4v1781262807419!5m2!1sen!2sin"
+      width=100%
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+</iframe>
     </div>
   </div>
 </section>
