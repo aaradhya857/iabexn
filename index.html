@@ -53,6 +53,11 @@ nav {
   gap: 12px;
   text-decoration: none;
 }
+.logo-img{
+    height:50px;
+    width:auto;
+    display:block;
+}
 .logo-mark {
   width: 36px; height: 36px;
   border: 2px solid var(--red);
@@ -109,6 +114,7 @@ nav a:hover { color: var(--red); }
   cursor: pointer;
   transition: all 0.25s;
   text-decoration:none;
+
 }
 .nav-cta:hover {
   background: transparent;
@@ -482,7 +488,12 @@ h2.section-heading {
   line-height: 1.4;
   transition: color 0.3s;
 }
-
+.cap-cta{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 125px;
+}
 /* ── SHOWCASE ── */
 .showcase {
   background: var(--bg);
@@ -499,10 +510,11 @@ h2.section-heading {
   overflow: hidden;
   border: 2px solid var(--text);
 }
-.slideshow-wrap::before {
+#showcase .live-projects::before {
   content: 'LIVE PROJECTS';
   position: absolute;
-  top: 18px; left: 24px;
+  top: 18px;
+  left: 24px;
   font-family: 'Space Mono', monospace;
   font-size: 0.6rem;
   color: var(--red);
@@ -694,10 +706,9 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="logo">
-    <div class="logo-mark">IX</div>
-    <span class="logo-name">IAB<span>EX</span></span>
-  </a>
+<a href="#home" class="logo">
+    <img src="logo.jpg" alt="IABEX Logo" class="logo-img">
+</a>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -801,7 +812,27 @@ footer {
     </div>
   </div>
 </section>
+<!-- COMPANY GALLERY -->
+<section class="showcase" id="gallery">
+  <div class="show-inner">
+    <div class="label reveal">Our Facility</div>
+    <h2 class="section-heading reveal">Engineering in action.</h2>
 
+    <div class="slideshow-wrap reveal">
+
+      <img src="slide1.jpg" class="slide active">
+      <img src="slide2.jpg" class="slide">
+      <img src="slide3.jpg" class="slide">
+
+      <div class="slide-dots">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- CAPABILITIES -->
 <section class="capabilities" id="capabilities">
   <div class="cap-inner">
@@ -862,6 +893,11 @@ footer {
       </div>
     </div>
   </div>
+<div class="cap-cta">
+    <a href="mailto:info@iabex.in" class="btn-primary">
+        Send Query
+    </a>
+</div>
 </section>
 
 <!-- INDUSTRIES -->
@@ -884,7 +920,7 @@ footer {
   <div class="show-inner">
     <div class="label reveal">Our work</div>
     <h2 class="section-heading reveal">Products in the field.</h2>
-    <div class="slideshow-wrap reveal">
+    <div class="slideshow-wrap reveal live-projects">
       <div class="slide-placeholder active" id="ph1">
         <div class="slide-placeholder-inner">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -976,7 +1012,7 @@ window.addEventListener('scroll', () => {
 });
 
 /* Slideshow */
-const slides = document.querySelectorAll('.slide-placeholder');
+const slides = document.querySelectorAll('.slide');
 const dots   = document.querySelectorAll('.dot');
 let current  = 0;
 let timer;
@@ -989,9 +1025,33 @@ function goSlide(n) {
   clearInterval(timer);
   timer = setInterval(nextSlide, 4000);
 }
+
 function nextSlide() { goSlide((current + 1) % slides.length); }
 timer = setInterval(nextSlide, 4000);
+const phSlides = document.querySelectorAll('#showcase .slide-placeholder');
+const phDots = document.querySelectorAll('#showcase .dot');
 
+let phCurrent = 0;
+let phTimer;
+
+function goPhSlide(n) {
+  phSlides[phCurrent].classList.remove('active');
+  phDots[phCurrent].classList.remove('active');
+
+  phCurrent = n;
+
+  phSlides[phCurrent].classList.add('active');
+  phDots[phCurrent].classList.add('active');
+
+  clearInterval(phTimer);
+  phTimer = setInterval(nextPhSlide, 4000);
+}
+
+function nextPhSlide() {
+  goPhSlide((phCurrent + 1) % phSlides.length);
+}
+
+phTimer = setInterval(nextPhSlide, 4000);
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
 const observer  = new IntersectionObserver((entries) => {
