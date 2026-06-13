@@ -497,9 +497,8 @@ h2.section-heading {
 .clients-logo-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 32px;
-  align-items: center;
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 20px;
 }
 
 .clients-logo-grid img {
@@ -511,12 +510,13 @@ h2.section-heading {
   background: white;
   border: 1px solid var(--line);
 
-  filter: grayscale(100%);
-  opacity: 0.8;
+  filter: none;
+  opacity: 1.0;
 
   transition: all 0.3s ease;
   transform: scale(1.08);
 }
+
 
 .clients-logo-grid img:hover {
   filter: grayscale(0%);
@@ -1004,6 +1004,9 @@ footer {
     <img src="client8.jpeg" alt="Client 8">
     <img src="client9.png" alt="Client 9">
     <img src="client10.jpeg" alt="Client 10">
+    <img src="client11.jpeg" alt="Client 11">
+    <img src="OIP.jpg" alt="Client 11">
+
   </div>
 </div>
 <!-- INDUSTRIES -->
