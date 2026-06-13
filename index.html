@@ -440,7 +440,41 @@ h2.section-heading {
   line-height: 1;
   pointer-events: none;
 }
+/* ── CLIENTS IMAGE SECTION ── */
+.clients-section {
+  margin-top: 60px;
+  padding-left: 125px;
+  max-width: 1140px;
+}
 
+.clients-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.clients-image-wrap {
+  max-width: 900px;
+  border: 2px solid var(--line-strong);
+  background: var(--white);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.clients-image-wrap:hover {
+  border-color: var(--red);
+  box-shadow: 0 10px 30px rgba(237,32,36,0.12);
+}
+
+.clients-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 /* ── INDUSTRIES ── */
 .industries {
   background: var(--bg2);
@@ -899,7 +933,14 @@ footer {
     </a>
 </div>
 </section>
+<!-- CLIENTS -->
+<div class="clients-section reveal">
+  <div class="clients-label">Our Clients</div>
 
+  <div class="clients-image-wrap">
+    <img src="clients.jpg" alt="Our Clients" class="clients-image">
+  </div>
+</div>
 <!-- INDUSTRIES -->
 <section class="industries" id="industries">
   <div class="ind-inner">
