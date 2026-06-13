@@ -197,7 +197,14 @@ nav a:hover { color: var(--red); }
   height: 1px;
   background: var(--red);
 }
+.hero-title .muted {
+  color: #666666;
+}
 
+.hero-title .accent {
+  color: var(--red);
+  font-weight: 700;
+}
 .hero h1 {
   font-size: clamp(3.2rem, 6vw, 5.8rem);
   font-weight: 700;
@@ -223,7 +230,7 @@ nav a:hover { color: var(--red); }
   position: relative;
   z-index: 2;
 }
-.hero-sub span { color: var(--red); }
+.hero-sub span { color: var(--black); }
 
 .hero-actions {
   display: flex;
@@ -576,7 +583,7 @@ h2.section-heading {
     margin-top: 40px;
     display: flex;
     justify-content: flex-start;
-    padding-left: 108px;
+    padding-left: 575px;
 }
 /* ── SHOWCASE ── */
 .showcase {
@@ -839,12 +846,20 @@ footer {
 
   <div class="hero-eyebrow">Pune, India — Electronics Engineering</div>
 
-  <h1>
-    It's all<br>about<br><em>ElectroniX.</em>
-  </h1>
+  <h1 class="hero-title">
+  <span class="muted"><span class="accent">I</span>t's all</span><br>
+
+  <span class="muted">
+    <span class="accent">AB</span>out
+  </span><br>
+
+  <span class="muted">
+    <span class="accent">E</span>lectroni<span class="accent">X</span>.
+  </span>
+</h1>
 
   <p class="hero-sub">
-    <span>I</span>t's all <span>AB</span>out <span>E</span>lectronics &amp; <span>X</span>-factor
+    <span>We build serious engineering systems</span>
   </p>
 
  <div class="hero-actions">
@@ -1092,6 +1107,11 @@ footer {
         <div class="contact-block-label">Working Hours</div>
         <p>Weekdays: 9:30 AM - 6:30 PM<br>Sundays : Holiday</p>
       </div>
+       <div class="contact-block">
+        <div class="contact-block-label">Phone number</div>
+        <p>+91 7666690113</p>
+      </div>
+       
       <div class="contact-block">
         <div class="contact-block-label">Email</div>
         <p><a href="mailto:info@iabex.in">info@iabex.in</a></p>
