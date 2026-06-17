@@ -382,7 +382,7 @@ h2.section-heading {
 /* ── CAPABILITIES ── */
 .capabilities {
   background: var(--bg);
-  padding: 150px 60px 100px 60px;
+  padding: 100px 60px;
 }
 
 .cap-inner {
@@ -391,15 +391,19 @@ h2.section-heading {
 }
 
 .cap-header {
-  margin-bottom: 50px;
-  text-align: left;
+  margin-bottom: 60px;
+}
+
+.cap-header .label {
+  margin-bottom: 20px;
 }
 
 .cap-header h2 {
   font-size: clamp(2.2rem, 3.5vw, 3rem);
-  font-weight: 600;
-  color: #334155; 
-  letter-spacing: 0;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .cap-grid {
@@ -409,63 +413,72 @@ h2.section-heading {
 }
 
 .cap-card {
-  background: #f4f5f7; /* A distinct, slightly cool light gray to separate from the white background */
-  border: 1px solid rgba(0, 0, 0, 0.04); /* Very subtle border to define the edges */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02); /* Soft default shadow to lift them off the page */
-  padding: 40px 30px;
-  border-radius: 12px; /* Slightly softer corners to match the image */
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .cap-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Shadow deepens on hover */
+  border-color: var(--red);
+  box-shadow: 0 8px 24px rgba(237,32,36,0.12);
+  transform: translateY(-4px);
 }
 
 .cap-card h3 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #334155;
-  letter-spacing: 0.05em;
+  color: var(--text);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   line-height: 1.4;
-  min-height: 2.8em; /* Ensures titles like 'ODM' don't break the uniform layout */
 }
 
-.cap-card .divider {
-  width: 100%;
-  height: 1px;
-  background: var(--line-strong);
-  margin-bottom: 24px;
+.cap-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .cap-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px 0;
-  flex-grow: 1; /* Pushes the image down evenly across all cards */
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .cap-list li {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--muted);
-  margin-bottom: 12px;
-  line-height: 1.4;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
+}
+
+.cap-list li::before {
+  content: '−';
+  color: var(--red);
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .cap-img-wrap {
   width: 100%;
-  height: 180px;
-  border-radius: 8px;
+  height: 140px;
+  border-radius: 6px;
   overflow: hidden;
-  background: #e2e8f0; 
-  position: relative; /* Required to stack the images on top of each other */
+  background: #f5f5f5;
+  position: relative;
 }
 
 .cap-slide {
@@ -476,12 +489,13 @@ h2.section-heading {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Smooth fade effect */
+  transition: opacity 1s ease-in-out;
 }
 
 .cap-slide.active {
   opacity: 1;
 }
+
 /* Responsive adjust */
 @media (max-width: 1024px) {
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
@@ -489,6 +503,7 @@ h2.section-heading {
 @media (max-width: 600px) {
   .cap-grid { grid-template-columns: 1fr; }
 }
+
 /* ── CAREERS ── */
 .careers-section {
   background: var(--red);
@@ -515,7 +530,6 @@ h2.section-heading {
 }
 
 .career-card {
-  /* This creates the lighter red/glass effect over the solid red background */
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -541,7 +555,7 @@ h2.section-heading {
   list-style-type: disc;
   padding-left: 20px;
   margin-bottom: 30px;
-  flex-grow: 1; /* Pushes the apply button to the bottom evenly */
+  flex-grow: 1;
 }
 
 .career-list li {
@@ -561,7 +575,7 @@ h2.section-heading {
   border-radius: 4px;
   text-decoration: none;
   display: inline-block;
-  align-self: flex-start; /* Keeps the button from stretching */
+  align-self: flex-start;
   transition: all 0.2s ease;
 }
 
@@ -578,6 +592,7 @@ h2.section-heading {
   .careers-grid { grid-template-columns: 1fr; }
   .careers-section { padding: 80px 30px; }
 }
+
 /* ── CLIENTS ── */
 .clients-section {
   padding: 80px 60px;
@@ -604,9 +619,9 @@ h2.section-heading {
 
 .clients-logo-grid img {
   width: 100%;
-  height: 140px; 
+  height: 140px;
   padding: 25px;
-  object-fit: contain; 
+  object-fit: contain;
   background: var(--white);
   border: 1px solid var(--line);
   display: block;
@@ -634,6 +649,7 @@ h2.section-heading {
     grid-template-columns: 1fr;
   }
 }
+
 /* ── INDUSTRIES ── */
 .industries {
   background: var(--bg2);
@@ -681,12 +697,7 @@ h2.section-heading {
   line-height: 1.4;
   transition: color 0.3s;
 }
-.cap-cta{
-    margin-top: 40px;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 575px;
-}
+
 /* ── SHOWCASE ── */
 .showcase {
   background: var(--bg);
@@ -728,7 +739,7 @@ h2.section-heading {
   object-position: center;
   opacity: 0;
   transition: opacity 1s ease;
-  background: #fff; 
+  background: #fff;
 }
 .slide.active { opacity: 1; }
 
@@ -1012,6 +1023,7 @@ footer {
     </div>
   </div>
 </section>
+
 <!-- COMPANY GALLERY -->
 <section class="showcase" id="gallery">
   <div class="show-inner">
@@ -1035,23 +1047,25 @@ footer {
     </div>
   </div>
 </section>
+
 <!-- CAPABILITIES -->
 <section class="capabilities" id="capabilities">
   <div class="cap-inner">
     
     <div class="cap-header reveal">
-      <h2>Our Capabilities</h2>
+      <div class="label">What we build</div>
+      <h2>Engineered solutions for every domain.</h2>
     </div>
 
     <div class="cap-grid">
       <!-- Card 1 -->
       <div class="cap-card reveal">
-        <h3>IOT AND CONNECTED DEVICES</h3>
-        <div class="divider"></div>
+        <h3>IoT & Connected Devices</h3>
+        <p class="cap-card-desc">Remote monitoring, smart metering, and sensor networks that keep your systems connected and responsive.</p>
         <ul class="cap-list">
-          <li>&rarr; RMS</li>
-          <li>&rarr; Smart Meter</li>
-          <li>&rarr; Air Quality</li>
+          <li>Remote Monitoring Systems</li>
+          <li>Smart Metering Solutions</li>
+          <li>Air Quality Monitoring</li>
         </ul>
         <div class="cap-img-wrap cap-slideshow">
           <img src="iot-1.jpg" class="cap-slide active" alt="IOT 1">
@@ -1062,12 +1076,12 @@ footer {
 
       <!-- Card 2 -->
       <div class="cap-card reveal">
-        <h3>SOLAR</h3>
-        <div class="divider"></div>
+        <h3>Solar & Renewable</h3>
+        <p class="cap-card-desc">Complete solar solutions from street lighting to pump controllers—designed for reliability in off-grid environments.</p>
         <ul class="cap-list">
-          <li>&rarr; Solar Street Light</li>
-          <li>&rarr; Solar Pump</li>
-          <li>&rarr; Solar Invertor</li>
+          <li>Solar Street Light Systems</li>
+          <li>Solar Pump Controllers</li>
+          <li>Solar Inverter Electronics</li>
         </ul>
         <div class="cap-img-wrap cap-slideshow">
           <img src="solar-1.jpg" class="cap-slide active" alt="Solar 1">
@@ -1078,12 +1092,12 @@ footer {
 
       <!-- Card 3 -->
       <div class="cap-card reveal">
-        <h3>INDUSTRIAL</h3>
-        <div class="divider"></div>
+        <h3>Industrial Automation</h3>
+        <p class="cap-card-desc">Process control, scientific instruments, and machine controllers that drive manufacturing efficiency and precision.</p>
         <ul class="cap-list">
-          <li>&rarr; Process Automation</li>
-          <li>&rarr; Scientific Instruments</li>
-          <li>&rarr; SPM Controller</li>
+          <li>Process Automation Controllers</li>
+          <li>Scientific Instruments</li>
+          <li>SPM Machine Control</li>
         </ul>
         <div class="cap-img-wrap cap-slideshow">
           <img src="industrial-1.jpg" class="cap-slide active" alt="Industrial 1">
@@ -1094,12 +1108,12 @@ footer {
 
       <!-- Card 4 -->
       <div class="cap-card reveal">
-        <h3>ODM AND WHITE LABELING</h3>
-        <div class="divider"></div>
+        <h3>ODM & White Label</h3>
+        <p class="cap-card-desc">From concept to production—complete product realization, custom design, and manufacturing for your brand.</p>
         <ul class="cap-list">
-          <li>&rarr; Concept to Product Realization</li>
-          <li>&rarr; Product Design and Manufacturing</li>
-          <li>&rarr; Product Customization</li>
+          <li>End-to-End Product Design</li>
+          <li>Manufacturing & Assembly</li>
+          <li>Custom Customization</li>
         </ul>
         <div class="cap-img-wrap cap-slideshow">
           <img src="odm-1.jpg" class="cap-slide active" alt="ODM 1">
@@ -1111,6 +1125,8 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- CAREERS -->
 <section class="careers-section" id="careers">
   <div class="careers-inner reveal">
     <h2 class="careers-heading">Careers</h2>
@@ -1153,6 +1169,7 @@ footer {
     </div>
   </div>
 </section>
+
 <!-- CLIENTS -->
 <section class="clients-section reveal" id="clients">
   <h2 class="clients-heading">Our Clients</h2>
@@ -1168,9 +1185,6 @@ footer {
     <img src="client9.png" alt="Client 9">
   </div>
 </section>
-
-
-
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1246,30 +1260,7 @@ function goSlide(n) {
 
 function nextSlide() { goSlide((current + 1) % slides.length); }
 timer = setInterval(nextSlide, 4000);
-const phSlides = document.querySelectorAll('#showcase .slide-placeholder');
-const phDots = document.querySelectorAll('#showcase .dot');
 
-let phCurrent = 0;
-let phTimer;
-
-function goPhSlide(n) {
-  phSlides[phCurrent].classList.remove('active');
-  phDots[phCurrent].classList.remove('active');
-
-  phCurrent = n;
-
-  phSlides[phCurrent].classList.add('active');
-  phDots[phCurrent].classList.add('active');
-
-  clearInterval(phTimer);
-  phTimer = setInterval(nextPhSlide, 4000);
-}
-
-function nextPhSlide() {
-  goPhSlide((phCurrent + 1) % phSlides.length);
-}
-
-phTimer = setInterval(nextPhSlide, 4000);
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
 const observer  = new IntersectionObserver((entries) => {
@@ -1281,12 +1272,12 @@ const observer  = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 revealEls.forEach(el => observer.observe(el));
+
 /* Capabilities Cards Slideshow */
 document.querySelectorAll('.cap-slideshow').forEach(slideshow => {
   const capSlides = slideshow.querySelectorAll('.cap-slide');
   let currentCapSlide = 0;
   
-  // Set the interval to change slides every 3 seconds (3000ms)
   setInterval(() => {
     capSlides[currentCapSlide].classList.remove('active');
     currentCapSlide = (currentCapSlide + 1) % capSlides.length;
