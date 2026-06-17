@@ -595,53 +595,60 @@ h2.section-heading {
 
 /* ── CLIENTS ── */
 .clients-section {
-  padding: 80px 60px;
-  margin: 0 auto;
+  padding: 100px 60px;
+  background: var(--bg2);
+}
+
+.clients-inner {
   max-width: 1200px;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .clients-heading {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
-  color: var(--red);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 60px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0 0 60px 0;
+  line-height: 1.1;
 }
 
 .clients-logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 24px;
 }
 
 .clients-logo-grid img {
   width: 100%;
-  height: 140px;
-  padding: 25px;
+  height: 120px;
+  padding: 20px;
   object-fit: contain;
   background: var(--white);
   border: 1px solid var(--line);
   display: block;
   margin: auto;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .clients-logo-grid img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
   border-color: var(--red);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(237,32,36,0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* Responsive adjustment for smaller screens */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .clients-logo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .clients-section { padding: 80px 40px; }
 }
 
 @media (max-width: 600px) {
@@ -1172,17 +1179,20 @@ footer {
 
 <!-- CLIENTS -->
 <section class="clients-section reveal" id="clients">
-  <h2 class="clients-heading">Our Clients</h2>
+  <div class="clients-inner">
+    <div class="label">Trusted by</div>
+    <h2 class="clients-heading">Our Clients</h2>
 
-  <div class="clients-logo-grid">
-    <img src="client1.png" alt="Client 1">
-    <img src="client2.png" alt="Client 2">
-    <img src="client3.png" alt="Client 3">
-    <img src="client4.png" alt="Client 4">
-    <img src="client5.png" alt="Client 5">
-    <img src="client6.png" alt="Client 6">
-    <img src="client7.jpeg" alt="Client 7">
-    <img src="client9.png" alt="Client 9">
+    <div class="clients-logo-grid">
+      <img src="client1.png" alt="Client 1">
+      <img src="client2.png" alt="Client 2">
+      <img src="client3.png" alt="Client 3">
+      <img src="client4.png" alt="Client 4">
+      <img src="client5.png" alt="Client 5">
+      <img src="client6.png" alt="Client 6">
+      <img src="client7.jpeg" alt="Client 7">
+      <img src="client9.png" alt="Client 9">
+    </div>
   </div>
 </section>
 
