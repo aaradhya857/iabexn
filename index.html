@@ -1262,21 +1262,54 @@ window.addEventListener('scroll', () => {
 
 /* Slideshow */
 const slides = document.querySelectorAll('.slide');
-const dots   = document.querySelectorAll('.dot');
-let current  = 0;
-let timer;
+const dots = document.querySelectorAll('.dot');
+
+let current = 0;
+let timer = null;
+let slideshowStarted = false;
+
 function goSlide(n) {
   slides[current].classList.remove('active');
   dots[current].classList.remove('active');
+
   current = n;
+
   slides[current].classList.add('active');
   dots[current].classList.add('active');
-  clearInterval(timer);
+}
+
+function nextSlide() {
+  goSlide((current + 1) % slides.length);
+}
+
+function startSlideshow() {
+  if (slideshowStarted) return;
+
+  slideshowStarted = true;
   timer = setInterval(nextSlide, 4000);
 }
 
-function nextSlide() { goSlide((current + 1) % slides.length); }
-timer = setInterval(nextSlide, 4000);
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    goSlide(index);
+
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 3200);
+  });
+});
+
+const showcaseObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startSlideshow();
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
+
+showcaseObserver.observe(document.querySelector('.slideshow-wrap'));
 
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
